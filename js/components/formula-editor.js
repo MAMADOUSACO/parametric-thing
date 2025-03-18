@@ -10,7 +10,7 @@ export function initMathComponents() {
     console.log('Initialisation des composants mathématiques');
     
     // Vérifier que MathJax est chargé
-    if (typeof MathJax === 'undefined') {
+    if (typeof window.MathJax === 'undefined') {
         console.error('MathJax n\'est pas chargé.');
         return;
     }
@@ -28,11 +28,22 @@ export function initMathComponents() {
     initInteractiveFormulas();
     
     // Traiter toutes les formules
-    MathJax.typesetPromise().then(() => {
-        console.log('Formules mathématiques rendues');
-    }).catch((err) => {
-        console.error('Erreur lors du rendu des formules mathématiques:', err);
-    });
+    if (window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise().then(() => {
+            console.log('Formules mathématiques rendues avec typesetPromise');
+        }).catch((err) => {
+            console.error('Erreur lors du rendu des formules mathématiques:', err);
+        });
+    } else if (window.MathJax.typeset) {
+        try {
+            window.MathJax.typeset();
+            console.log('Formules mathématiques rendues avec typeset');
+        } catch (err) {
+            console.error('Erreur lors du rendu des formules mathématiques:', err);
+        }
+    } else {
+        console.warn('Aucune méthode MathJax pour le rendu trouvée. Vérifiez la version de MathJax.');
+    }
 }
 
 /**

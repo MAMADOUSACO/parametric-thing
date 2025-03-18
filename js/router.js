@@ -168,8 +168,19 @@ async function loadContent(routeId) {
         
         // Traiter les formules mathématiques avec MathJax
         if (window.MathJax) {
-            window.MathJax.typeset();
+           if (window.MathJax.typeset) {
+                try {
+                    window.MathJax.typeset();
+                } catch (error) {
+                   console.warn('Erreur lors du rendu MathJax:', error);
+               }
+          } else if (window.MathJax.typesetPromise) {
+                window.MathJax.typesetPromise()
+                    .catch(error => console.warn('Erreur lors du rendu MathJax:', error));
+            } else {
+                console.warn('Aucune méthode MathJax de rendu disponible');
         }
+}
         
         // Faire défiler la page vers le haut
         window.scrollTo(0, 0);
