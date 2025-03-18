@@ -1,0 +1,313 @@
+/* 
+ * sidebar.css - Styles de la barre latérale pour le site Équations Paramétriques
+ */
+
+/* Structure de base de la barre latérale */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: var(--sidebar-width);
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--color-divider);
+    box-shadow: var(--shadow-sm);
+    overflow-y: auto;
+    z-index: var(--z-index-sidebar);
+    transition: width var(--transition-normal), transform var(--transition-normal);
+}
+
+/* Navigation principale */
+.main-nav {
+    flex-grow: 1;
+    padding: var(--spacing-md) 0;
+}
+
+/* Style des listes de la barre latérale */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Module - Conteneur pour un groupe de cours */
+.module-item {
+    margin-bottom: var(--spacing-xs);
+}
+
+/* En-tête de module (élément cliquable) */
+.module-header {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+    border-radius: var(--border-radius-sm);
+    margin: 0 var(--spacing-xs);
+}
+
+.module-header:hover {
+    background-color: var(--color-surface-variant);
+}
+
+.module-header.active {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* Icône de module */
+.module-icon {
+    margin-right: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+}
+
+/* Titre du module */
+.module-title {
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+/* Icône de bascule pour afficher/masquer les cours */
+.toggle-icon {
+    font-size: var(--font-size-sm);
+    transition: transform var(--transition-fast);
+}
+
+.module-header.collapsed .toggle-icon {
+    transform: rotate(-90deg);
+}
+
+/* Liste des cours dans un module */
+.module-courses {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-normal);
+    opacity: 1;
+}
+
+.module-item.expanded .module-courses {
+    max-height: 1000px; /* Valeur arbitrairement grande */
+}
+
+.module-item.collapsed .module-courses {
+    max-height: 0;
+    opacity: 0;
+}
+
+/* Élément de cours individuel */
+.course-item {
+    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-sm) calc(var(--spacing-md) * 2 + 1.5rem);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+    font-size: var(--font-size-sm);
+    line-height: 1.3;
+    position: relative;
+    border-radius: var(--border-radius-sm);
+    margin: 0 var(--spacing-xs);
+}
+
+.course-item:hover {
+    background-color: var(--color-surface-variant);
+}
+
+.course-item.active {
+    background-color: var(--color-surface-variant);
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.course-item.completed::before {
+    content: "✓";
+    position: absolute;
+    left: calc(var(--spacing-md) + 0.25rem);
+    color: var(--color-success);
+    font-weight: bold;
+}
+
+/* Barre de progression du cours */
+.course-progress {
+    height: 3px;
+    background-color: var(--color-divider);
+    border-radius: var(--border-radius-full);
+    overflow: hidden;
+    margin-top: var(--spacing-xs);
+}
+
+.course-progress-fill {
+    height: 100%;
+    background-color: var(--color-success);
+    transition: width var(--transition-normal);
+}
+
+/* Pied de la barre latérale */
+.sidebar-footer {
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--color-divider);
+    background-color: var(--sidebar-bg);
+}
+
+/* Conteneur de la progression globale */
+.progress-container {
+    margin-bottom: var(--spacing-sm);
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-xs);
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: var(--color-divider);
+    border-radius: var(--border-radius-full);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--color-primary);
+    width: 0%; /* Sera mis à jour via JavaScript */
+    transition: width var(--transition-slow);
+}
+
+.progress-percentage {
+    text-align: center;
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-xs);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+/* Badge pour indiquer les nouveaux cours */
+.course-badge {
+    display: inline-block;
+    padding: 0.15rem 0.4rem;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    border-radius: var(--border-radius-full);
+    margin-left: var(--spacing-xs);
+    background-color: var(--color-accent);
+    color: white;
+}
+
+.course-badge.new {
+    background-color: var(--color-accent);
+}
+
+.course-badge.updated {
+    background-color: var(--color-info);
+}
+
+/* Séparateur pour grouper des sections */
+.sidebar-separator {
+    height: 1px;
+    background-color: var(--color-divider);
+    margin: var(--spacing-md) var(--spacing-md);
+}
+
+.sidebar-heading {
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-xs);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+}
+
+/* Version collapsed de la barre latérale (pour écrans plus petits) */
+.sidebar.collapsed {
+    width: var(--sidebar-collapsed-width);
+}
+
+.sidebar.collapsed .module-title,
+.sidebar.collapsed .toggle-icon,
+.sidebar.collapsed .module-courses,
+.sidebar.collapsed .sidebar-heading,
+.sidebar.collapsed .progress-label,
+.sidebar.collapsed .progress-percentage,
+.sidebar.collapsed .progress-container,
+.sidebar.collapsed .text-button {
+    display: none;
+}
+
+.sidebar.collapsed .module-header {
+    justify-content: center;
+    padding: var(--spacing-md) 0;
+}
+
+.sidebar.collapsed .module-icon {
+    margin-right: 0;
+    font-size: var(--font-size-xl);
+}
+
+/* Contrôle pour réduire/étendre la barre latérale */
+.sidebar-toggle {
+    position: absolute;
+    bottom: var(--spacing-md);
+    right: -12px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    z-index: 1;
+    font-size: var(--font-size-sm);
+}
+
+.sidebar-toggle .toggle-icon {
+    transition: transform var(--transition-fast);
+}
+
+.sidebar.collapsed .sidebar-toggle .toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* Styles pour les écrans mobiles */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        height: calc(100vh - var(--header-height));
+        transform: translateX(-100%);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    
+    .sidebar-overlay {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: calc(var(--z-index-sidebar) - 1);
+        display: none;
+    }
+    
+    .sidebar-overlay.active {
+        display: block;
+    }
+}
+
+/* Transition pour les thèmes */
+.sidebar, 
+.module-header, 
+.course-item, 
+.progress-bar, 
+.progress-fill,
+.sidebar-footer {
+    transition: background-color var(--transition-normal), color var(--transition-normal), border-color var(--transition-normal);
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Équations Paramétriques | Apprentissage Interactif</title>
+    <meta name="description" content="Site interactif pour l'apprentissage des équations paramétriques, des concepts de base aux applications avancées">
+    
+    <!-- Normalisation et styles principaux -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Styles des composants -->
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/sidebar.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/forms.css">
+    <link rel="stylesheet" href="css/components/sliders.css">
+    <link rel="stylesheet" href="css/components/modals.css">
+    <link rel="stylesheet" href="css/components/tooltips.css">
+    
+    <!-- Thème par défaut (clair) -->
+    <link rel="stylesheet" href="css/themes/light.css" id="theme-stylesheet">
+    
+    <!-- Styles spécifiques aux pages -->
+    <link rel="stylesheet" href="css/pages/home.css">
+    <link rel="stylesheet" href="css/pages/course.css">
+    <link rel="stylesheet" href="css/pages/visualization.css">
+    <link rel="stylesheet" href="css/pages/exercises.css">
+    
+    <!-- Préchargement des polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Overlay de chargement -->
+    <div id="loading-overlay">
+        <div class="loader"></div>
+        <p>Chargement des équations paramétriques...</p>
+    </div>
+    
+    <!-- En-tête fixe -->
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="#home">
+                <span>Équations<br>Paramétriques</span>
+            </a>
+        </div>
+        
+        <div class="search-container">
+            <form id="search-form">
+                <input type="search" id="search-input" placeholder="Rechercher un concept, une courbe...">
+                <button type="submit" id="search-button">
+                    <svg class="search-icon" viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+        
+        <div class="user-controls">
+            <button id="theme-toggle" class="icon-button" title="Changer de thème">
+                <svg class="theme-icon" viewBox="0 0 24 24">
+                    <path d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48z"/>
+                </svg>
+            </button>
+            <button id="settings-button" class="icon-button" title="Paramètres">
+                <svg class="settings-icon" viewBox="0 0 24 24">
+                    <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+                </svg>
+            </button>
+            <button id="help-button" class="icon-button" title="Aide">
+                <svg class="help-icon" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Structure principale -->
+    <div class="main-container">
+        <!-- Menu de navigation latéral -->
+        <aside class="sidebar">
+            <nav class="main-nav">
+                <ul id="modules-list">
+                    <!-- Dynamiquement généré via JavaScript -->
+                    <li class="module-item">
+                        <div class="module-header" data-module="home">
+                            <span class="module-icon">🏠</span>
+                            <span class="module-title">Accueil</span>
+                        </div>
+                    </li>
+                    <li class="module-item">
+                        <div class="module-header" data-module="module1">
+                            <span class="module-icon">1️⃣</span>
+                            <span class="module-title">Fondamentaux</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <ul class="module-courses">
+                            <li class="course-item" data-course="course1">Qu'est-ce qu'une équation paramétrique ?</li>
+                            <li class="course-item" data-course="course2">Prérequis mathématiques</li>
+                        </ul>
+                    </li>
+                    <!-- Les autres modules seront chargés dynamiquement -->
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="progress-container">
+                    <div class="progress-label">Progression globale</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-percentage">0%</div>
+                </div>
+                <button id="reset-progress" class="text-button">Réinitialiser la progression</button>
+            </div>
+        </aside>
+        
+        <!-- Contenu principal -->
+        <main id="content-container">
+            <!-- Le contenu sera chargé dynamiquement ici -->
+            <div id="content-placeholder">
+                <!-- Affichage d'un message lors du chargement initial -->
+                <div class="loading-content">
+                    <p>Chargement du contenu...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Pied de page -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Équations Paramétriques - Projet Éducatif</p>
+            <div class="footer-links">
+                <a href="#about">À propos</a>
+                <a href="#help">Aide</a>
+                <a href="#glossary">Glossaire</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Panneau de personnalisation (masqué par défaut) -->
+    <div id="customization-panel" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Personnalisation</h2>
+                <button class="close-button" id="close-customization">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-section">
+                    <h3>Thème</h3>
+                    <div class="theme-options">
+                        <button class="theme-option" data-theme="light">Clair</button>
+                        <button class="theme-option" data-theme="dark">Sombre</button>
+                        <button class="theme-option" data-theme="blackboard">Tableau noir</button>
+                        <button class="theme-option" data-theme="grid">Papier millimétré</button>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3>Taille du texte</h3>
+                    <div class="text-size-controls">
+                        <button id="decrease-text">A-</button>
+                        <input type="range" id="text-size-slider" min="80" max="120" value="100">
+                        <button id="increase-text">A+</button>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3>Contraste</h3>
+                    <div class="contrast-controls">
+                        <input type="range" id="contrast-slider" min="90" max="110" value="100">
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3>Animation</h3>
+                    <div class="animation-controls">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="animation-toggle" checked>
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-label">Activer les animations</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modèle pour la fenêtre modale des formules -->
+    <div id="formula-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Formule détaillée</h2>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body formula-container">
+                <!-- Le contenu sera inséré dynamiquement -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts de l'application -->
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,439 @@
+/* 
+ * main.css - Styles principaux du site Équations Paramétriques
+ * Styles globaux et variables CSS communes
+ */
+
+ :root {
+    /* Palette de couleurs - Les valeurs spécifiques sont dans les fichiers de thème */
+    --color-primary: #0066cc;
+    --color-secondary: #00aaff;
+    --color-accent: #ff6b00;
+    --color-background: #f8f9fa;
+    --color-surface: #ffffff;
+    --color-text-primary: #212529;
+    --color-text-secondary: #495057;
+    --color-text-disabled: #adb5bd;
+    --color-divider: #dee2e6;
+    --color-error: #dc3545;
+    --color-success: #28a745;
+    --color-warning: #ffc107;
+    --color-info: #17a2b8;
+    
+    /* Typographie */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+    --font-mono: 'Roboto Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    --font-size-base: 16px;
+    --font-size-xs: 0.75rem;   /* 12px */
+    --font-size-sm: 0.875rem;  /* 14px */
+    --font-size-md: 1rem;      /* 16px */
+    --font-size-lg: 1.125rem;  /* 18px */
+    --font-size-xl: 1.25rem;   /* 20px */
+    --font-size-2xl: 1.5rem;   /* 24px */
+    --font-size-3xl: 1.875rem; /* 30px */
+    --font-size-4xl: 2.25rem;  /* 36px */
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    
+    /* Espacement */
+    --spacing-xs: 0.25rem;   /* 4px */
+    --spacing-sm: 0.5rem;    /* 8px */
+    --spacing-md: 1rem;      /* 16px */
+    --spacing-lg: 1.5rem;    /* 24px */
+    --spacing-xl: 2rem;      /* 32px */
+    --spacing-2xl: 3rem;     /* 48px */
+    --spacing-3xl: 4rem;     /* 64px */
+    
+    /* Bordures */
+    --border-radius-sm: 0.25rem;  /* 4px */
+    --border-radius-md: 0.5rem;   /* 8px */
+    --border-radius-lg: 1rem;     /* 16px */
+    --border-radius-full: 9999px;
+    --border-width-thin: 1px;
+    --border-width-normal: 2px;
+    --border-width-thick: 4px;
+    
+    /* Ombres */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Transitions */
+    --transition-fast: 150ms;
+    --transition-normal: 300ms;
+    --transition-slow: 500ms;
+    
+    /* Dimensions de la mise en page */
+    --header-height: 4rem;
+    --footer-height: 3rem;
+    --sidebar-width: 18rem;
+    --sidebar-collapsed-width: 4rem;
+    
+    /* Z-index */
+    --z-index-header: 100;
+    --z-index-sidebar: 90;
+    --z-index-modal: 1000;
+    --z-index-tooltip: 1010;
+    --z-index-loading: 2000;
+}
+
+/* Réinitialisation et styles de base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: var(--font-size-base);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Styles pour le texte */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: var(--spacing-md);
+    line-height: var(--line-height-tight);
+    font-weight: 600;
+}
+
+h1 {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+h2 {
+    font-size: var(--font-size-3xl);
+    margin-top: var(--spacing-xl);
+}
+
+h3 {
+    font-size: var(--font-size-2xl);
+    margin-top: var(--spacing-lg);
+}
+
+h4 {
+    font-size: var(--font-size-xl);
+}
+
+h5 {
+    font-size: var(--font-size-lg);
+}
+
+h6 {
+    font-size: var(--font-size-md);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
+}
+
+ul, ol {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-lg);
+}
+
+li {
+    margin-bottom: var(--spacing-xs);
+}
+
+code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background-color: var(--color-surface);
+    padding: 0.2em 0.4em;
+    border-radius: var(--border-radius-sm);
+    border: var(--border-width-thin) solid var(--color-divider);
+}
+
+pre {
+    font-family: var(--font-mono);
+    background-color: var(--color-surface);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    border: var(--border-width-thin) solid var(--color-divider);
+    overflow-x: auto;
+    margin-bottom: var(--spacing-md);
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+blockquote {
+    border-left: var(--border-width-thick) solid var(--color-primary);
+    padding-left: var(--spacing-md);
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-secondary);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+figure {
+    margin: var(--spacing-lg) 0;
+}
+
+figcaption {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-top: var(--spacing-sm);
+}
+
+/* Mise en évidence du texte mathématique */
+.math-inline {
+    padding: 0 var(--spacing-xs);
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: var(--border-radius-sm);
+}
+
+.math-display {
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-md);
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: var(--border-radius-md);
+    overflow-x: auto;
+}
+
+/* Structure de la page */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--spacing-md);
+    z-index: var(--z-index-header);
+}
+
+.main-container {
+    display: flex;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    margin-top: var(--header-height);
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+    background-color: var(--color-surface);
+    border-right: var(--border-width-thin) solid var(--color-divider);
+    height: calc(100vh - var(--header-height));
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    overflow-y: auto;
+    z-index: var(--z-index-sidebar);
+    transition: width var(--transition-normal), transform var(--transition-normal);
+}
+
+#content-container {
+    flex-grow: 1;
+    margin-left: var(--sidebar-width);
+    padding: var(--spacing-lg);
+    max-width: calc(100% - var(--sidebar-width));
+    transition: margin-left var(--transition-normal), max-width var(--transition-normal);
+}
+
+.main-footer {
+    height: var(--footer-height);
+    background-color: var(--color-surface);
+    border-top: var(--border-width-thin) solid var(--color-divider);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+/* Loader et overlay de chargement */
+.loader {
+    border: 5px solid var(--color-divider);
+    border-top: 5px solid var(--color-primary);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--z-index-loading);
+    transition: opacity var(--transition-normal);
+}
+
+#loading-overlay p {
+    margin-top: var(--spacing-md);
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+}
+
+.loading-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    color: var(--color-text-secondary);
+}
+
+/* Classes utilitaires */
+.hidden {
+    display: none !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-muted {
+    color: var(--color-text-secondary);
+}
+
+.bg-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.bg-light {
+    background-color: var(--color-surface);
+}
+
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+.mb-5 { margin-bottom: var(--spacing-xl); }
+
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+.mt-5 { margin-top: var(--spacing-xl); }
+
+/* Adaptations pour écrans mobiles et tablettes */
+@media (max-width: 992px) {
+    :root {
+        --sidebar-width: 15rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    
+    #content-container {
+        margin-left: 0;
+        max-width: 100%;
+        padding: var(--spacing-md);
+    }
+    
+    .main-header {
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --font-size-base: 14px;
+        --header-height: 3.5rem;
+    }
+    
+    h1 { font-size: var(--font-size-3xl); }
+    h2 { font-size: var(--font-size-2xl); }
+    h3 { font-size: var(--font-size-xl); }
+}
+
+/* Styles pour impression */
+@media print {
+    .main-header, .sidebar, .main-footer, #loading-overlay, .modal {
+        display: none !important;
+    }
+    
+    #content-container {
+        margin-left: 0;
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+}

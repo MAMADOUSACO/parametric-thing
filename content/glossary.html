@@ -1,0 +1,514 @@
+<div class="glossary-container">
+    <header class="glossary-header">
+        <h1 class="glossary-title">Glossaire des Équations Paramétriques</h1>
+        <p class="glossary-description">Un référentiel complet des termes et concepts liés aux équations paramétriques</p>
+        
+        <div class="glossary-controls">
+            <div class="search-box">
+                <input type="text" id="glossary-search" placeholder="Rechercher un terme..." class="search-input">
+                <button class="search-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="sort-controls">
+                <span>Trier :</span>
+                <button class="btn btn-secondary btn-sm glossary-sort-btn active" data-sort="asc">A-Z</button>
+                <button class="btn btn-secondary btn-sm glossary-sort-btn" data-sort="desc">Z-A</button>
+            </div>
+            
+            <div class="filter-controls">
+                <span>Filtrer par :</span>
+                <select class="filter-select" id="category-filter">
+                    <option value="all">Toutes les catégories</option>
+                    <option value="basics">Concepts de base</option>
+                    <option value="curves">Courbes</option>
+                    <option value="applications">Applications</option>
+                    <option value="calculus">Calcul différentiel</option>
+                    <option value="geometry">Géométrie</option>
+                </select>
+            </div>
+        </div>
+    </header>
+    
+    <div class="glossary-alphabet">
+        <div class="alphabet-links">
+            <a href="#section-a" class="alphabet-link">A</a>
+            <a href="#section-b" class="alphabet-link">B</a>
+            <a href="#section-c" class="alphabet-link">C</a>
+            <a href="#section-d" class="alphabet-link">D</a>
+            <a href="#section-e" class="alphabet-link">E</a>
+            <a href="#section-f" class="alphabet-link">F</a>
+            <a href="#section-g" class="alphabet-link">G</a>
+            <a href="#section-h" class="alphabet-link">H</a>
+            <a href="#section-i" class="alphabet-link">I</a>
+            <a href="#section-j" class="alphabet-link">J</a>
+            <a href="#section-k" class="alphabet-link">K</a>
+            <a href="#section-l" class="alphabet-link">L</a>
+            <a href="#section-m" class="alphabet-link">M</a>
+            <a href="#section-n" class="alphabet-link">N</a>
+            <a href="#section-o" class="alphabet-link">O</a>
+            <a href="#section-p" class="alphabet-link">P</a>
+            <a href="#section-q" class="alphabet-link">Q</a>
+            <a href="#section-r" class="alphabet-link">R</a>
+            <a href="#section-s" class="alphabet-link">S</a>
+            <a href="#section-t" class="alphabet-link">T</a>
+            <a href="#section-u" class="alphabet-link">U</a>
+            <a href="#section-v" class="alphabet-link">V</a>
+            <a href="#section-w" class="alphabet-link">W</a>
+            <a href="#section-x" class="alphabet-link">X</a>
+            <a href="#section-y" class="alphabet-link">Y</a>
+            <a href="#section-z" class="alphabet-link">Z</a>
+        </div>
+    </div>
+    
+    <div class="glossary-content">
+        <div class="no-results hidden" id="no-results">
+            <p>Aucun terme ne correspond à votre recherche. Essayez avec un autre mot-clé.</p>
+        </div>
+        
+        <div class="glossary-sections">
+            <!-- Section A -->
+            <section id="section-a" class="glossary-section">
+                <h2 class="section-letter">A</h2>
+                
+                <div class="glossary-terms">
+                    <div class="glossary-term" data-category="calculus">
+                        <h3 class="term-title">Accélération</h3>
+                        <div class="term-definition">
+                            <p>En physique et dans le contexte des équations paramétriques, l'accélération représente le taux de changement de la vitesse par rapport au temps. Pour une courbe paramétrique où $t$ représente le temps, les composantes de l'accélération sont données par les dérivées secondes : $a_x = \frac{d^2x}{dt^2}$ et $a_y = \frac{d^2y}{dt^2}$.</p>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module3-course7" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-term" data-category="basics">
+                        <h3 class="term-title">Arc de courbe paramétrique</h3>
+                        <div class="term-definition">
+                            <p>Un arc de courbe paramétrique est un segment continu d'une courbe paramétrique, défini par un intervalle spécifique du paramètre, par exemple $t \in [a, b]$. La longueur d'un arc de courbe paramétrique est donnée par l'intégrale : $L = \int_{a}^{b} \sqrt{(\frac{dx}{dt})^2 + (\frac{dy}{dt})^2} dt$.</p>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module3-course6" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-term" data-category="curves">
+                        <h3 class="term-title">Astroïde</h3>
+                        <div class="term-definition">
+                            <p>L'astroïde est une courbe plane en forme d'étoile à quatre branches. Elle est représentée par les équations paramétriques $x = a\cos^3(t)$ et $y = a\sin^3(t)$, où $a$ est une constante positive et $t \in [0, 2\pi]$. L'équation cartésienne correspondante est $(x/a)^{2/3} + (y/a)^{2/3} = 1$.</p>
+                            <figure class="term-figure">
+                                <img src="/assets/images/illustrations/module2/astroid.svg" alt="Courbe astroïde" class="term-image">
+                                <figcaption>Astroïde avec $a = 1$</figcaption>
+                            </figure>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module2-course4" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section C -->
+            <section id="section-c" class="glossary-section">
+                <h2 class="section-letter">C</h2>
+                
+                <div class="glossary-terms">
+                    <div class="glossary-term" data-category="curves">
+                        <h3 class="term-title">Cardioïde</h3>
+                        <div class="term-definition">
+                            <p>La cardioïde est une courbe plane en forme de cœur qui est un cas particulier de limaçon. Elle est représentée par les équations paramétriques $x = a(2\cos(t) - \cos(2t))$ et $y = a(2\sin(t) - \sin(2t))$, ou alternativement $x = a(1 + \cos(t))\cos(t)$ et $y = a(1 + \cos(t))\sin(t)$, où $a$ est une constante positive et $t \in [0, 2\pi]$.</p>
+                            <figure class="term-figure">
+                                <img src="/assets/images/illustrations/module2/cardioid.svg" alt="Courbe cardioïde" class="term-image">
+                                <figcaption>Cardioïde avec $a = 1$</figcaption>
+                            </figure>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module2-course5" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-term" data-category="curves">
+                        <h3 class="term-title">Cercle</h3>
+                        <div class="term-definition">
+                            <p>Un cercle est une courbe plane fermée dont tous les points sont à égale distance d'un point fixe appelé centre. Pour un cercle de rayon $r$ centré à l'origine, les équations paramétriques sont $x = r\cos(t)$ et $y = r\sin(t)$, où $t \in [0, 2\pi]$. L'équation cartésienne correspondante est $x^2 + y^2 = r^2$.</p>
+                            <p>Plus généralement, pour un cercle centré au point $(h, k)$, les équations paramétriques sont $x = h + r\cos(t)$ et $y = k + r\sin(t)$, et l'équation cartésienne est $(x - h)^2 + (y - k)^2 = r^2$.</p>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module1-course1" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-term" data-category="geometry">
+                        <h3 class="term-title">Courbure</h3>
+                        <div class="term-definition">
+                            <p>La courbure d'une courbe paramétrique mesure le taux auquel la courbe dévie d'une ligne droite. Pour une courbe paramétrique plane définie par $x = x(t)$ et $y = y(t)$, la courbure $\kappa$ est donnée par la formule :</p>
+                            <div class="term-formula">
+                                $\kappa = \frac{|x'y'' - y'x''|}{(x'^2 + y'^2)^{3/2}}$
+                            </div>
+                            <p>où les primes indiquent des dérivées par rapport au paramètre $t$. La courbure est l'inverse du rayon du cercle osculateur (cercle qui approxime le mieux la courbe en un point donné).</p>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module3-course6" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-term" data-category="curves">
+                        <h3 class="term-title">Courbe de Bézier</h3>
+                        <div class="term-definition">
+                            <p>Une courbe de Bézier est une courbe paramétrique définie par des points de contrôle. Une courbe de Bézier de degré $n$ est définie par $n+1$ points de contrôle $P_0, P_1, \ldots, P_n$. L'équation paramétrique d'une courbe de Bézier est :</p>
+                            <div class="term-formula">
+                                $P(t) = \sum_{i=0}^{n} \binom{n}{i} (1-t)^{n-i} t^i P_i$
+                            </div>
+                            <p>où $t \in [0, 1]$ et $\binom{n}{i}$ est le coefficient binomial. Les courbes de Bézier sont largement utilisées en infographie et en conception assistée par ordinateur (CAO).</p>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module8-course17" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-term" data-category="curves">
+                        <h3 class="term-title">Courbe de Lissajous</h3>
+                        <div class="term-definition">
+                            <p>Une courbe de Lissajous est une courbe paramétrique qui décrit la trajectoire d'un point soumis à deux oscillations harmoniques perpendiculaires. Les équations paramétriques sont $x = A\sin(at + \delta)$ et $y = B\sin(bt)$, où $A$ et $B$ sont les amplitudes, $a$ et $b$ sont les fréquences, $\delta$ est le déphasage, et $t$ est le paramètre.</p>
+                            <p>La forme de la courbe dépend des rapports entre les fréquences $a$ et $b$. Si $a/b$ est rationnel, la courbe est fermée; sinon, elle est dense dans le rectangle $[-A, A] \times [-B, B]$.</p>
+                            <figure class="term-figure">
+                                <img src="/assets/images/illustrations/module2/lissajous.svg" alt="Courbe de Lissajous" class="term-image">
+                                <figcaption>Courbe de Lissajous avec $a = 3$, $b = 2$ et $\delta = \pi/2$</figcaption>
+                            </figure>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module2-course5" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-term" data-category="curves">
+                        <h3 class="term-title">Cycloïde</h3>
+                        <div class="term-definition">
+                            <p>Une cycloïde est la courbe tracée par un point fixé sur une circonférence d'un cercle qui roule sans glisser sur une droite. Si le cercle a un rayon $r$, les équations paramétriques de la cycloïde sont $x = r(t - \sin(t))$ et $y = r(1 - \cos(t))$, où $t$ est l'angle de rotation du cercle.</p>
+                            <figure class="term-figure">
+                                <img src="/assets/images/illustrations/module2/cycloid.svg" alt="Courbe cycloïde" class="term-image">
+                                <figcaption>Cycloïde avec $r = 1$</figcaption>
+                            </figure>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module2-course4" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section E -->
+            <section id="section-e" class="glossary-section">
+                <h2 class="section-letter">E</h2>
+                
+                <div class="glossary-terms">
+                    <div class="glossary-term" data-category="basics">
+                        <h3 class="term-title">Élimination du paramètre</h3>
+                        <div class="term-definition">
+                            <p>L'élimination du paramètre est le processus qui consiste à convertir une représentation paramétrique d'une courbe en sa représentation cartésienne. Cela se fait généralement en exprimant le paramètre $t$ en fonction de $x$ à partir de la première équation paramétrique, puis en substituant cette expression dans la deuxième équation pour obtenir une relation directe entre $x$ et $y$.</p>
+                            <p>Par exemple, pour les équations paramétriques du cercle $x = \cos(t)$ et $y = \sin(t)$, on peut utiliser l'identité $\cos^2(t) + \sin^2(t) = 1$ pour éliminer $t$ et obtenir l'équation cartésienne $x^2 + y^2 = 1$.</p>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module4-course9" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-term" data-category="curves">
+                        <h3 class="term-title">Ellipse</h3>
+                        <div class="term-definition">
+                            <p>Une ellipse est une courbe plane fermée qui peut être définie comme le lieu des points dont la somme des distances à deux points fixes (les foyers) est constante. Pour une ellipse centrée à l'origine avec des demi-axes $a$ (horizontal) et $b$ (vertical), les équations paramétriques sont $x = a\cos(t)$ et $y = b\sin(t)$, où $t \in [0, 2\pi]$. L'équation cartésienne correspondante est $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$.</p>
+                            <figure class="term-figure">
+                                <img src="/assets/images/illustrations/module2/ellipse.svg" alt="Ellipse" class="term-image">
+                                <figcaption>Ellipse avec $a = 2$ et $b = 1$</figcaption>
+                            </figure>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module2-course3" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-term" data-category="basics">
+                        <h3 class="term-title">Équation paramétrique</h3>
+                        <div class="term-definition">
+                            <p>Une équation paramétrique est une façon de définir une courbe ou une surface en utilisant un ou plusieurs paramètres. Pour une courbe plane, les équations paramétriques sont typiquement de la forme $x = f(t)$ et $y = g(t)$, où $t$ est le paramètre et $f$ et $g$ sont des fonctions. Pour chaque valeur de $t$ dans un intervalle donné, on obtient un point $(x, y)$ sur la courbe.</p>
+                            <p>Les équations paramétriques offrent plusieurs avantages par rapport aux équations cartésiennes, notamment la possibilité de représenter des courbes qui ne sont pas des fonctions (comme le cercle) et de décrire naturellement le mouvement d'un point au fil du temps.</p>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module1-course1" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section H -->
+            <section id="section-h" class="glossary-section">
+                <h2 class="section-letter">H</h2>
+                
+                <div class="glossary-terms">
+                    <div class="glossary-term" data-category="curves">
+                        <h3 class="term-title">Hélice</h3>
+                        <div class="term-definition">
+                            <p>Une hélice est une courbe tridimensionnelle qui s'enroule autour d'une ligne droite (axe) à une distance constante et avec un angle constant. Pour une hélice s'enroulant autour de l'axe des $z$ avec un rayon $r$ et un pas $p$, les équations paramétriques sont :</p>
+                            <div class="term-formula">
+                                $x = r\cos(t)$<br>
+                                $y = r\sin(t)$<br>
+                                $z = \frac{p}{2\pi}t$
+                            </div>
+                            <p>où $t \in \mathbb{R}$ est le paramètre. Le pas $p$ représente la distance verticale parcourue en une révolution complète.</p>
+                            <figure class="term-figure">
+                                <img src="/assets/images/illustrations/module5/helix.svg" alt="Hélice" class="term-image">
+                                <figcaption>Hélice avec $r = 1$ et $p = 2$</figcaption>
+                            </figure>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module5-course11" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-term" data-category="curves">
+                        <h3 class="term-title">Hyperbole</h3>
+                        <div class="term-definition">
+                            <p>Une hyperbole est une courbe plane ouverte qui peut être définie comme le lieu des points dont la différence des distances à deux points fixes (les foyers) est constante. Pour une hyperbole centrée à l'origine avec des demi-axes $a$ (horizontal) et $b$ (vertical), les équations paramétriques sont $x = a\sec(t)$ et $y = b\tan(t)$, où $t$ est le paramètre (avec certaines restrictions pour éviter les discontinuités). L'équation cartésienne correspondante est $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ pour une hyperbole horizontale.</p>
+                            <figure class="term-figure">
+                                <img src="/assets/images/illustrations/module2/hyperbola.svg" alt="Hyperbole" class="term-image">
+                                <figcaption>Hyperbole avec $a = 1$ et $b = 1$</figcaption>
+                            </figure>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module2-course4" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section L -->
+            <section id="section-l" class="glossary-section">
+                <h2 class="section-letter">L</h2>
+                
+                <div class="glossary-terms">
+                    <div class="glossary-term" data-category="curves">
+                        <h3 class="term-title">Lemniscate de Bernoulli</h3>
+                        <div class="term-definition">
+                            <p>La lemniscate de Bernoulli est une courbe plane en forme de huit ou de symbole d'infini. Elle peut être définie comme le lieu des points dont le produit des distances à deux points fixes (les foyers) est constant. Pour une lemniscate avec des foyers à $(-a, 0)$ et $(a, 0)$, les équations paramétriques sont :</p>
+                            <div class="term-formula">
+                                $x = \frac{a\cos(t)}{1 + \sin^2(t)}$<br>
+                                $y = \frac{a\cos(t)\sin(t)}{1 + \sin^2(t)}$
+                            </div>
+                            <p>où $t \in [0, 2\pi]$ est le paramètre. L'équation cartésienne correspondante est $(x^2 + y^2)^2 = 2a^2(x^2 - y^2)$.</p>
+                            <figure class="term-figure">
+                                <img src="/assets/images/illustrations/module2/lemniscate.svg" alt="Lemniscate de Bernoulli" class="term-image">
+                                <figcaption>Lemniscate de Bernoulli avec $a = 1$</figcaption>
+                            </figure>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module2-course5" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-term" data-category="geometry">
+                        <h3 class="term-title">Longueur d'arc</h3>
+                        <div class="term-definition">
+                            <p>La longueur d'arc d'une courbe paramétrique est la distance mesurée le long de la courbe. Pour une courbe plane définie par les équations paramétriques $x = f(t)$ et $y = g(t)$ avec $t \in [a, b]$, la longueur d'arc est donnée par l'intégrale :</p>
+                            <div class="term-formula">
+                                $L = \int_{a}^{b} \sqrt{(\frac{dx}{dt})^2 + (\frac{dy}{dt})^2} dt$
+                            </div>
+                            <p>Pour une courbe dans l'espace 3D définie par $x = f(t)$, $y = g(t)$ et $z = h(t)$, la formule devient :</p>
+                            <div class="term-formula">
+                                $L = \int_{a}^{b} \sqrt{(\frac{dx}{dt})^2 + (\frac{dy}{dt})^2 + (\frac{dz}{dt})^2} dt$
+                            </div>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module3-course6" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section P -->
+            <section id="section-p" class="glossary-section">
+                <h2 class="section-letter">P</h2>
+                
+                <div class="glossary-terms">
+                    <div class="glossary-term" data-category="basics">
+                        <h3 class="term-title">Paramètre</h3>
+                        <div class="term-definition">
+                            <p>Dans le contexte des équations paramétriques, un paramètre est une variable indépendante qui détermine la position d'un point sur une courbe ou une surface. Typiquement noté $t$, le paramètre peut être interprété de différentes façons selon le contexte :</p>
+                            <ul>
+                                <li>Comme le temps dans un mouvement</li>
+                                <li>Comme un angle dans le cas d'un cercle ou d'une spirale</li>
+                                <li>Comme une distance parcourue le long de la courbe</li>
+                            </ul>
+                            <p>Lorsque le paramètre varie dans un intervalle donné, les équations paramétriques génèrent l'ensemble des points qui forment la courbe ou la surface.</p>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module1-course1" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-term" data-category="curves">
+                        <h3 class="term-title">Parabole</h3>
+                        <div class="term-definition">
+                            <p>Une parabole est une courbe plane ouverte qui peut être définie comme le lieu des points équidistants d'un point fixe (le foyer) et d'une droite fixe (la directrice). Pour une parabole dont le sommet est à l'origine et qui s'ouvre vers le haut, les équations paramétriques peuvent être $x = t$ et $y = t^2$, où $t \in \mathbb{R}$ est le paramètre. L'équation cartésienne correspondante est $y = x^2$.</p>
+                            <p>Plus généralement, une parabole dont le sommet est au point $(h, k)$ et qui s'ouvre avec un paramètre de forme $a$ peut être représentée par l'équation cartésienne $y = a(x - h)^2 + k$.</p>
+                            <figure class="term-figure">
+                                <img src="/assets/images/illustrations/module2/parabola.svg" alt="Parabole" class="term-image">
+                                <figcaption>Parabole avec équation $y = x^2$</figcaption>
+                            </figure>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module2-course4" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-term" data-category="geometry">
+                        <h3 class="term-title">Point singulier</h3>
+                        <div class="term-definition">
+                            <p>Un point singulier d'une courbe paramétrique est un point où la courbe présente un comportement anormal, comme un pic, un nœud ou un point de rebroussement. Mathématiquement, un point singulier d'une courbe paramétrique $x = f(t)$ et $y = g(t)$ est un point où les dérivées $f'(t)$ et $g'(t)$ s'annulent simultanément (le vecteur tangent est nul), ce qui signifie que la direction de la tangente n'est pas définie en ce point.</p>
+                            <p>Les types courants de points singuliers incluent :</p>
+                            <ul>
+                                <li><strong>Cuspide</strong> : un point où la courbe change brusquement de direction (forme de pic)</li>
+                                <li><strong>Nœud</strong> : un point où la courbe s'auto-intersecte</li>
+                                <li><strong>Point de rebroussement</strong> : un point où la courbe fait demi-tour</li>
+                            </ul>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module3-course6" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section S -->
+            <section id="section-s" class="glossary-section">
+                <h2 class="section-letter">S</h2>
+                
+                <div class="glossary-terms">
+                    <div class="glossary-term" data-category="curves">
+                        <h3 class="term-title">Spirale d'Archimède</h3>
+                        <div class="term-definition">
+                            <p>La spirale d'Archimède est une courbe plane qui s'éloigne de son origine à vitesse constante pendant que le rayon vecteur tourne à vitesse angulaire constante. En coordonnées polaires, elle est définie par $r = a\theta$, où $r$ est la distance à l'origine, $\theta$ est l'angle, et $a$ est une constante positive. Les équations paramétriques correspondantes sont $x = at\cos(t)$ et $y = at\sin(t)$, où $t \geq 0$ est le paramètre (identifié à $\theta$).</p>
+                            <figure class="term-figure">
+                                <img src="/assets/images/illustrations/module2/archimedes_spiral.svg" alt="Spirale d'Archimède" class="term-image">
+                                <figcaption>Spirale d'Archimède avec $a = 1$</figcaption>
+                            </figure>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module2-course5" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-term" data-category="curves">
+                        <h3 class="term-title">Spirale logarithmique</h3>
+                        <div class="term-definition">
+                            <p>La spirale logarithmique est une courbe plane qui s'éloigne de son origine de manière exponentielle pendant que le rayon vecteur tourne à vitesse angulaire constante. En coordonnées polaires, elle est définie par $r = ae^{b\theta}$, où $r$ est la distance à l'origine, $\theta$ est l'angle, et $a$ et $b$ sont des constantes positives. Les équations paramétriques correspondantes sont $x = ae^{bt}\cos(t)$ et $y = ae^{bt}\sin(t)$, où $t \geq 0$ est le paramètre (identifié à $\theta$).</p>
+                            <p>La spirale logarithmique a la propriété remarquable d'être auto-similaire : elle conserve sa forme lorsqu'elle est agrandie ou réduite.</p>
+                            <figure class="term-figure">
+                                <img src="/assets/images/illustrations/module2/logarithmic_spiral.svg" alt="Spirale logarithmique" class="term-image">
+                                <figcaption>Spirale logarithmique avec $a = 1$ et $b = 0.2$</figcaption>
+                            </figure>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module2-course5" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-term" data-category="geometry">
+                        <h3 class="term-title">Surface paramétrique</h3>
+                        <div class="term-definition">
+                            <p>Une surface paramétrique est une surface dans l'espace tridimensionnel définie par trois équations paramétriques qui dépendent de deux paramètres indépendants, généralement notés $u$ et $v$. La forme générale des équations est :</p>
+                            <div class="term-formula">
+                                $x = f(u, v)$<br>
+                                $y = g(u, v)$<br>
+                                $z = h(u, v)$
+                            </div>
+                            <p>où $u$ et $v$ varient dans un domaine à deux dimensions. Pour chaque paire de valeurs $(u, v)$ dans ce domaine, les équations paramétriques donnent un point $(x, y, z)$ sur la surface.</p>
+                            <p>Les surfaces paramétriques sont largement utilisées en modélisation 3D, en architecture et en ingénierie pour représenter des formes complexes.</p>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module6-course12" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section T -->
+            <section id="section-t" class="glossary-section">
+                <h2 class="section-letter">T</h2>
+                
+                <div class="glossary-terms">
+                    <div class="glossary-term" data-category="geometry">
+                        <h3 class="term-title">Tangente</h3>
+                        <div class="term-definition">
+                            <p>La tangente à une courbe paramétrique en un point est une droite qui touche la courbe en ce point et a la même direction que la courbe à cet endroit. Pour une courbe paramétrique définie par $x = f(t)$ et $y = g(t)$, le vecteur tangent au point correspondant à la valeur $t_0$ du paramètre est donné par les dérivées $(\frac{dx}{dt}, \frac{dy}{dt}) = (f'(t_0), g'(t_0))$.</p>
+                            <p>L'équation de la droite tangente au point $(f(t_0), g(t_0))$ peut s'écrire sous la forme :</p>
+                            <div class="term-formula">
+                                $(y - g(t_0)) = \frac{g'(t_0)}{f'(t_0)} (x - f(t_0))$
+                            </div>
+                            <p>à condition que $f'(t_0) \neq 0$.</p>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module3-course6" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+                    <div class="glossary-term" data-category="curves">
+                        <h3 class="term-title">Tore</h3>
+                        <div class="term-definition">
+                            <p>Un tore est une surface de révolution générée en faisant tourner un cercle autour d'un axe coplanaire avec le cercle. Si le cercle a un rayon $r$ et son centre est à une distance $R$ de l'axe de rotation (avec $R > r$ pour éviter l'auto-intersection), les équations paramétriques du tore sont :</p>
+                            <div class="term-formula">
+                                $x = (R + r\cos(v))\cos(u)$<br>
+                                $y = (R + r\cos(v))\sin(u)$<br>
+                                $z = r\sin(v)$
+                            </div>
+                            <p>où $u, v \in [0, 2\pi]$ sont les paramètres. Le paramètre $u$ parcourt le cercle majeur (autour de l'axe de rotation) et $v$ parcourt le cercle mineur (la section du tore).</p>
+                            <figure class="term-figure">
+                                <img src="/assets/images/illustrations/module6/torus.svg" alt="Tore" class="term-image">
+                                <figcaption>Tore avec $R = 2$ et $r = 1$</figcaption>
+                            </figure>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module6-course13" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section V -->
+            <section id="section-v" class="glossary-section">
+                <h2 class="section-letter">V</h2>
+                
+                <div class="glossary-terms">
+                    <div class="glossary-term" data-category="calculus">
+                        <h3 class="term-title">Vitesse</h3>
+                        <div class="term-definition">
+                            <p>Dans le contexte des équations paramétriques, la vitesse représente le taux de changement de la position par rapport au temps. Pour une courbe paramétrique où $t$ représente le temps, le vecteur vitesse est donné par les dérivées $\vec{v} = (\frac{dx}{dt}, \frac{dy}{dt})$ en 2D ou $\vec{v} = (\frac{dx}{dt}, \frac{dy}{dt}, \frac{dz}{dt})$ en 3D.</p>
+                            <p>La norme du vecteur vitesse, appelée vitesse scalaire ou rapidité, est donnée par :</p>
+                            <div class="term-formula">
+                                $v = |\vec{v}| = \sqrt{(\frac{dx}{dt})^2 + (\frac{dy}{dt})^2}$
+                            </div>
+                            <p>en 2D, ou :</p>
+                            <div class="term-formula">
+                                $v = |\vec{v}| = \sqrt{(\frac{dx}{dt})^2 + (\frac{dy}{dt})^2 + (\frac{dz}{dt})^2}$
+                            </div>
+                            <p>en 3D.</p>
+                        </div>
+                        <div class="term-links">
+                            <a href="#module3-course7" class="term-link">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <div class="back-to-top" id="back-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+    </div>
+</div>

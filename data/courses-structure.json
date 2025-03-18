@@ -1,0 +1,248 @@
+{
+    "title": "Équations Paramétriques",
+    "description": "Cours complet sur les équations paramétriques, des fondamentaux aux applications avancées",
+    "version": "1.0.0",
+    "modules": [
+      {
+        "id": "module1",
+        "title": "Fondamentaux et introduction",
+        "description": "Introduction aux concepts de base des équations paramétriques",
+        "icon": "1️⃣",
+        "order": 1,
+        "courses": [
+          {
+            "id": "course1",
+            "title": "Qu'est-ce qu'une équation paramétrique ?",
+            "description": "Définition et concept de base des équations paramétriques",
+            "duration": 20,
+            "difficulty": "débutant",
+            "prerequisites": []
+          },
+          {
+            "id": "course2",
+            "title": "Prérequis mathématiques",
+            "description": "Rappels sur les fonctions, la trigonométrie et les systèmes de coordonnées",
+            "duration": 30,
+            "difficulty": "débutant",
+            "prerequisites": []
+          }
+        ]
+      },
+      {
+        "id": "module2",
+        "title": "Courbes paramétriques planes",
+        "description": "Exploration des courbes paramétriques en deux dimensions",
+        "icon": "2️⃣",
+        "order": 2,
+        "courses": [
+          {
+            "id": "course3",
+            "title": "Courbes élémentaires",
+            "description": "Étude des courbes paramétriques simples: droite, cercle, ellipse",
+            "duration": 25,
+            "difficulty": "débutant",
+            "prerequisites": ["module1-course1", "module1-course2"]
+          },
+          {
+            "id": "course4",
+            "title": "Courbes classiques",
+            "description": "Étude des courbes paramétriques classiques: paraboles, hyperboles, cycloïdes",
+            "duration": 35,
+            "difficulty": "intermédiaire",
+            "prerequisites": ["module2-course3"]
+          },
+          {
+            "id": "course5",
+            "title": "Spirales et courbes spéciales",
+            "description": "Exploration des spirales et autres courbes paramétriques spéciales",
+            "duration": 30,
+            "difficulty": "intermédiaire",
+            "prerequisites": ["module2-course4"]
+          }
+        ]
+      },
+      {
+        "id": "module3",
+        "title": "Analyse des courbes paramétriques",
+        "description": "Méthodes pour analyser les propriétés géométriques des courbes paramétriques",
+        "icon": "3️⃣",
+        "order": 3,
+        "courses": [
+          {
+            "id": "course6",
+            "title": "Propriétés géométriques",
+            "description": "Étude des tangentes, normales, courbure et points singuliers",
+            "duration": 40,
+            "difficulty": "intermédiaire",
+            "prerequisites": ["module2-course3", "module2-course4"]
+          },
+          {
+            "id": "course7",
+            "title": "Mouvement et dynamique",
+            "description": "Interprétation cinématique des courbes paramétriques",
+            "duration": 35,
+            "difficulty": "intermédiaire",
+            "prerequisites": ["module3-course6"]
+          }
+        ]
+      },
+      {
+        "id": "module4",
+        "title": "Transformations et manipulations",
+        "description": "Techniques pour transformer et manipuler les courbes paramétriques",
+        "icon": "4️⃣",
+        "order": 4,
+        "courses": [
+          {
+            "id": "course8",
+            "title": "Opérations sur les courbes",
+            "description": "Translations, rotations, homothéties et déformations",
+            "duration": 30,
+            "difficulty": "intermédiaire",
+            "prerequisites": ["module2-course5", "module3-course6"]
+          },
+          {
+            "id": "course9",
+            "title": "Conversion entre représentations",
+            "description": "Conversion entre représentations paramétrique et cartésienne",
+            "duration": 35,
+            "difficulty": "intermédiaire",
+            "prerequisites": ["module4-course8"]
+          }
+        ]
+      },
+      {
+        "id": "module5",
+        "title": "Équations paramétriques dans l'espace 3D",
+        "description": "Extension des concepts paramétriques à l'espace tridimensionnel",
+        "icon": "5️⃣",
+        "order": 5,
+        "courses": [
+          {
+            "id": "course10",
+            "title": "Introduction à l'espace 3D",
+            "description": "Extension du concept au 3D, vecteurs et repères",
+            "duration": 30,
+            "difficulty": "intermédiaire",
+            "prerequisites": ["module3-course7", "module4-course9"]
+          },
+          {
+            "id": "course11",
+            "title": "Courbes 3D fondamentales",
+            "description": "Étude des hélices, spirales et courbes 3D classiques",
+            "duration": 35,
+            "difficulty": "avancé",
+            "prerequisites": ["module5-course10"]
+          }
+        ]
+      },
+      {
+        "id": "module6",
+        "title": "Surfaces paramétriques",
+        "description": "Introduction aux surfaces définies par des équations paramétriques",
+        "icon": "6️⃣",
+        "order": 6,
+        "courses": [
+          {
+            "id": "course12",
+            "title": "Introduction aux surfaces",
+            "description": "Définition et concepts des surfaces paramétriques",
+            "duration": 35,
+            "difficulty": "avancé",
+            "prerequisites": ["module5-course11"]
+          },
+          {
+            "id": "course13",
+            "title": "Surfaces classiques",
+            "description": "Étude des surfaces paramétriques classiques et leur visualisation",
+            "duration": 40,
+            "difficulty": "avancé",
+            "prerequisites": ["module6-course12"]
+          }
+        ]
+      },
+      {
+        "id": "module7",
+        "title": "Applications avancées",
+        "description": "Applications des équations paramétriques dans différents domaines",
+        "icon": "7️⃣",
+        "order": 7,
+        "courses": [
+          {
+            "id": "course14",
+            "title": "Applications en physique",
+            "description": "Utilisation des équations paramétriques en mécanique et électromagnétisme",
+            "duration": 35,
+            "difficulty": "avancé",
+            "prerequisites": ["module5-course11", "module6-course13"]
+          },
+          {
+            "id": "course15",
+            "title": "Applications en informatique",
+            "description": "Animation par ordinateur et modélisation 3D avec des équations paramétriques",
+            "duration": 30,
+            "difficulty": "avancé",
+            "prerequisites": ["module6-course13"]
+          },
+          {
+            "id": "course16",
+            "title": "Art et design paramétrique",
+            "description": "Création artistique et design basés sur des équations paramétriques",
+            "duration": 25,
+            "difficulty": "intermédiaire",
+            "prerequisites": ["module4-course8", "module7-course15"]
+          }
+        ]
+      },
+      {
+        "id": "module8",
+        "title": "Techniques spécialisées",
+        "description": "Techniques avancées utilisant les équations paramétriques",
+        "icon": "8️⃣",
+        "order": 8,
+        "courses": [
+          {
+            "id": "course17",
+            "title": "Courbes de Bézier et splines",
+            "description": "Étude des courbes de Bézier, B-splines et NURBS",
+            "duration": 40,
+            "difficulty": "avancé",
+            "prerequisites": ["module4-course9", "module7-course15"]
+          },
+          {
+            "id": "course18",
+            "title": "Fractales paramétriques",
+            "description": "Exploration des fractales générées par des équations paramétriques",
+            "duration": 35,
+            "difficulty": "avancé",
+            "prerequisites": ["module7-course16"]
+          },
+          {
+            "id": "course19",
+            "title": "Équations différentielles et paramétrisation",
+            "description": "Résolution d'équations différentielles par paramétrisation",
+            "duration": 45,
+            "difficulty": "expert",
+            "prerequisites": ["module7-course14", "module8-course17"]
+          }
+        ]
+      },
+      {
+        "id": "module9",
+        "title": "Projets pratiques",
+        "description": "Application de toutes les connaissances acquises dans des projets pratiques",
+        "icon": "9️⃣",
+        "order": 9,
+        "courses": [
+          {
+            "id": "course20",
+            "title": "Projets guidés",
+            "description": "Réalisation de projets basés sur les équations paramétriques",
+            "duration": 60,
+            "difficulty": "expert",
+            "prerequisites": ["module7-course15", "module7-course16", "module8-course19"]
+          }
+        ]
+      }
+    ]
+  }

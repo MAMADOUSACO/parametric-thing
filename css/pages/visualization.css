@@ -1,0 +1,390 @@
+/* 
+ * visualization.css - Styles pour les visualisations et graphiques paramétriques
+ */
+
+/* Conteneur de visualisation */
+.visualization-container {
+    background-color: var(--graph-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+/* Titre de la visualisation */
+.visualization-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+}
+
+/* Description de la visualisation */
+.visualization-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Conteneur pour le graphique paramétrique */
+.parametric-graph {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    font-family: var(--font-primary);
+}
+
+/* Styles pour le SVG */
+.parametric-svg {
+    display: block;
+    margin: 0 auto;
+    background-color: var(--graph-bg);
+}
+
+/* Styles pour les axes */
+.parametric-svg .x-axis path,
+.parametric-svg .y-axis path,
+.parametric-svg .x-axis line,
+.parametric-svg .y-axis line {
+    stroke: var(--axis-color);
+    stroke-width: 1.5;
+}
+
+.parametric-svg .x-axis text,
+.parametric-svg .y-axis text {
+    fill: var(--color-text-secondary);
+    font-size: 12px;
+}
+
+.parametric-svg .x-axis-label,
+.parametric-svg .y-axis-label {
+    fill: var(--color-text-primary);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Styles pour la courbe paramétrique */
+.parametric-svg .parametric-path {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Styles pour le point sur la courbe */
+.parametric-svg .parametric-point {
+    stroke: white;
+    stroke-width: 1.5;
+    cursor: pointer;
+}
+
+/* Styles pour les coordonnées */
+.parametric-svg .coordinates-label {
+    fill: var(--color-text-primary);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    pointer-events: none;
+}
+
+/* Styles pour la tangente */
+.parametric-svg .tangent-line {
+    stroke-linecap: round;
+}
+
+/* Styles pour les contrôles */
+.parametric-controls {
+    margin-top: var(--spacing-md);
+    font-family: var(--font-primary);
+}
+
+.parametric-controls-container {
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    background-color: var(--color-surface-variant);
+}
+
+.parametric-equations {
+    margin-bottom: var(--spacing-md);
+}
+
+.equation-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-xs);
+}
+
+.equation-row label {
+    font-family: var(--font-mono);
+    margin-right: var(--spacing-sm);
+    white-space: nowrap;
+}
+
+.equation-input {
+    flex: 1;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-mono);
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+}
+
+.equation-input:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+
+.parametric-controls-row {
+    display: flex;
+    align-items: center;
+    margin-top: var(--spacing-sm);
+}
+
+.t-slider {
+    flex: 1;
+    margin: 0 var(--spacing-md);
+}
+
+.t-value {
+    font-family: var(--font-mono);
+    min-width: 80px;
+    text-align: right;
+}
+
+.visualization-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.visualization-options label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.visualization-options input[type="checkbox"] {
+    margin-right: var(--spacing-xs);
+}
+
+/* Onglets pour différentes visualisations */
+.visualization-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--color-divider);
+    margin-bottom: var(--spacing-md);
+}
+
+.visualization-tab {
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all var(--transition-fast);
+}
+
+.visualization-tab:hover {
+    background-color: var(--color-surface-variant);
+}
+
+.visualization-tab.active {
+    border-bottom-color: var(--color-primary);
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.visualization-content {
+    display: none;
+}
+
+.visualization-content.active {
+    display: block;
+}
+
+/* Animation d'un point sur un chemin */
+.animated-point {
+    animation: moveAlongPath 10s linear infinite;
+}
+
+@keyframes moveAlongPath {
+    0% {
+        offset-distance: 0%;
+    }
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+/* Paramètres interactifs */
+.parameters-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--color-surface-variant);
+    border-radius: var(--border-radius-md);
+}
+
+.parameter-control {
+    display: flex;
+    flex-direction: column;
+}
+
+.parameter-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xs);
+}
+
+.parameter-name {
+    font-weight: 500;
+}
+
+.parameter-value {
+    font-family: var(--font-mono);
+    color: var(--color-primary);
+}
+
+.parameter-slider {
+    width: 100%;
+}
+
+.parameter-input {
+    width: 60px;
+    padding: var(--spacing-xs);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-mono);
+    text-align: right;
+}
+
+/* Mode d'affichage */
+.display-mode-toggle {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+}
+
+.display-mode-btn {
+    flex: 1;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    text-align: center;
+    transition: all var(--transition-fast);
+}
+
+.display-mode-btn:hover {
+    background-color: var(--color-surface-variant);
+}
+
+.display-mode-btn.active {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+/* Légende du graphique */
+.chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    font-size: var(--font-size-sm);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: var(--spacing-xs);
+}
+
+/* Couleurs standards pour les courbes */
+.curve-x {
+    stroke: var(--color-coordinate-x);
+}
+
+.curve-y {
+    stroke: var(--color-coordinate-y);
+}
+
+.curve-z {
+    stroke: var(--color-coordinate-z);
+}
+
+.curve-parameter {
+    stroke: var(--color-parameter-t);
+}
+
+/* Informations sur les équations */
+.equation-info {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-divider);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.equation-title {
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.equation-system {
+    font-family: var(--font-mono);
+    margin-bottom: var(--spacing-sm);
+}
+
+.equation-system .math-inline {
+    color: var(--color-primary);
+}
+
+.equation-properties {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+/* Styles pour les formules mathématiques */
+.math-formula {
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    padding: var(--spacing-sm);
+    background-color: var(--color-math-highlight);
+    border-radius: var(--border-radius-sm);
+    margin: var(--spacing-sm) 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .parameters-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .equation-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .equation-row label {
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .equation-input {
+        width: 100%;
+    }
+    
+    .parameter-control {
+        margin-bottom: var(--spacing-sm);
+    }
+}

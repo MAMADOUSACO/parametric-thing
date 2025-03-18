@@ -1,0 +1,221 @@
+/* 
+ * dark.css - Thème sombre pour le site Équations Paramétriques
+ */
+
+ :root {
+    /* Palette de couleurs - Thème sombre */
+    --color-primary: #7b68ee;          /* Violet-bleu primaire */
+    --color-primary-light: #a58efc;    /* Violet-bleu clair */
+    --color-primary-dark: #5a4abf;     /* Violet-bleu foncé */
+    
+    --color-secondary: #9d4edd;        /* Violet secondaire */
+    --color-secondary-light: #c77dff;  /* Violet secondaire clair */
+    --color-secondary-dark: #7b2cbf;   /* Violet secondaire foncé */
+    
+    --color-accent: #ff9e00;           /* Orange accent */
+    --color-accent-light: #ffb700;     /* Orange accent clair */
+    --color-accent-dark: #e67700;      /* Orange accent foncé */
+    
+    --color-success: #2ecc71;          /* Vert succès */
+    --color-warning: #f39c12;          /* Jaune avertissement */
+    --color-error: #e74c3c;            /* Rouge erreur */
+    --color-info: #3498db;             /* Bleu information */
+    
+    /* Couleurs de fond et surfaces */
+    --color-background: #121212;       /* Gris très foncé pour le fond */
+    --color-surface: #1e1e1e;          /* Gris foncé pour les cartes et conteneurs */
+    --color-surface-variant: #2d2d2d;  /* Gris moyen pour les éléments alternés */
+    
+    /* Couleurs de texte */
+    --color-text-primary: #e0e0e0;     /* Blanc cassé pour le texte principal */
+    --color-text-secondary: #a0a0a0;   /* Gris clair pour texte secondaire */
+    --color-text-tertiary: #707070;    /* Gris moyen pour texte tertiaire */
+    --color-text-disabled: #505050;    /* Gris foncé pour texte désactivé */
+    
+    /* Bordures et séparateurs */
+    --color-divider: #3d3d3d;          /* Gris moyen pour les séparateurs */
+    --color-border: #505050;           /* Gris pour les bordures */
+    
+    /* Couleurs spécifiques aux mathématiques */
+    --color-math-highlight: rgba(123, 104, 238, 0.2);  /* Violet transparent pour surligner formules */
+    --color-parameter-t: #ff5e5b;                      /* Rouge pour le paramètre t */
+    --color-coordinate-x: #00f5d4;                     /* Turquoise pour la coordonnée x */
+    --color-coordinate-y: #00bbf9;                     /* Bleu pour la coordonnée y */
+    --color-coordinate-z: #d65db1;                     /* Rose pour la coordonnée z */
+    
+    /* Ombres adaptées au thème sombre (plus subtiles) */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.25), 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.3), 0 8px 10px rgba(0, 0, 0, 0.25);
+    
+    /* Variables spécifiques aux composants dans le thème sombre */
+    --header-bg: rgba(30, 30, 30, 0.95);
+    --sidebar-bg: var(--color-surface);
+    --card-bg: var(--color-surface);
+    --tooltip-bg: var(--color-surface-variant);
+    --tooltip-color: var(--color-text-primary);
+    --modal-backdrop: rgba(0, 0, 0, 0.7);
+    --scrollbar-track: var(--color-background);
+    --scrollbar-thumb: var(--color-divider);
+    --scrollbar-thumb-hover: var(--color-border);
+    
+    /* Graphiques et visualisations */
+    --grid-line-color: rgba(255, 255, 255, 0.1);
+    --grid-line-major: rgba(255, 255, 255, 0.2);
+    --axis-color: rgba(255, 255, 255, 0.7);
+    --graph-bg: #1e1e1e;
+}
+
+/* Styles spécifiques au thème sombre */
+
+/* Style des scrollbars pour le thème sombre */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}
+
+/* Surbrillance de sélection */
+::selection {
+    background-color: var(--color-primary);
+    color: var(--color-text-primary);
+}
+
+/* Style pour le code dans le thème sombre */
+code {
+    background-color: var(--color-surface-variant);
+    color: var(--color-primary-light);
+    border-color: var(--color-divider);
+}
+
+/* Style pour les bloc-notes et notes dans le thème sombre */
+.note {
+    background-color: var(--color-surface-variant);
+    border-left: 4px solid var(--color-primary);
+}
+
+.note-info {
+    border-left-color: var(--color-info);
+}
+
+.note-warning {
+    border-left-color: var(--color-warning);
+}
+
+.note-error {
+    border-left-color: var(--color-error);
+}
+
+/* Focus styles pour accessibilité */
+:focus-visible {
+    outline: 2px solid var(--color-primary-light);
+    outline-offset: 2px;
+}
+
+/* Styles de cartes mathématiques */
+.math-card {
+    background-color: var(--color-surface-variant);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+}
+
+/* Fond des formules mathématiques */
+.formula-container {
+    background-color: var(--color-surface-variant);
+}
+
+/* Style pour les visualisations interactives */
+.visualization-container {
+    background-color: var(--graph-bg);
+    border: 1px solid var(--color-border);
+}
+
+/* Style pour les boutons dans ce thème */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--color-surface-variant);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-divider);
+}
+
+/* Style pour les sliders et contrôles */
+input[type="range"] {
+    background-color: var(--color-surface-variant);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    background-color: var(--color-primary);
+}
+
+/* Style pour les onglets */
+.tabs-container .tab {
+    background-color: var(--color-surface-variant);
+}
+
+.tabs-container .tab.active {
+    background-color: var(--color-surface);
+    border-top: 3px solid var(--color-primary);
+}
+
+/* Inversions pour les images et icônes */
+.icon-invert {
+    filter: invert(1);
+}
+
+/* Style pour les liens */
+a {
+    color: var(--color-primary-light);
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+/* Styles pour les entrées de formulaire */
+input, textarea, select {
+    background-color: var(--color-surface-variant);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--color-primary);
+}
+
+/* Style pour les tableaux */
+table {
+    border-color: var(--color-border);
+}
+
+th {
+    background-color: var(--color-surface-variant);
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+}

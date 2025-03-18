@@ -1,0 +1,220 @@
+<div class="home-container">
+    <!-- Bannière d'accueil -->
+    <section class="home-banner">
+        <div class="home-banner-content">
+            <h1>Explorez l'univers des Équations Paramétriques</h1>
+            <p>Une approche interactive et visuelle pour comprendre les équations paramétriques, des concepts fondamentaux aux applications avancées.</p>
+            <div class="banner-buttons">
+                <button id="start-learning-btn" class="btn btn-primary">Commencer l'apprentissage</button>
+                <button id="resume-btn" class="btn btn-secondary" style="display: none;">Reprendre</button>
+            </div>
+        </div>
+        <div id="banner-parametric-animation" class="parametric-overlay"></div>
+    </section>
+
+    <!-- Présentation des modules -->
+    <section class="home-section">
+        <h2 class="home-section-title">Parcours d'apprentissage</h2>
+        <p>Explorez notre parcours complet, conçu pour tous les niveaux, du débutant à l'expert.</p>
+        
+        <div class="modules-grid" id="modules-preview">
+            <!-- Les cartes de modules seront générées par JavaScript -->
+            <div class="module-card">
+                <div class="module-card-header">
+                    <span class="module-card-icon">1️⃣</span>
+                    <span>Module 1</span>
+                </div>
+                <div class="module-card-content">
+                    <h3 class="module-card-title">Fondamentaux et introduction</h3>
+                    <p class="module-card-description">Introduction aux concepts de base des équations paramétriques.</p>
+                    <div class="module-card-courses">
+                        <div>• Qu'est-ce qu'une équation paramétrique ?</div>
+                        <div>• Prérequis mathématiques</div>
+                    </div>
+                </div>
+                <div class="module-card-footer">
+                    <button class="btn btn-secondary btn-sm">Explorer</button>
+                </div>
+            </div>
+            
+            <div class="module-card">
+                <div class="module-card-header">
+                    <span class="module-card-icon">2️⃣</span>
+                    <span>Module 2</span>
+                </div>
+                <div class="module-card-content">
+                    <h3 class="module-card-title">Courbes paramétriques planes</h3>
+                    <p class="module-card-description">Exploration des courbes paramétriques en deux dimensions.</p>
+                    <div class="module-card-courses">
+                        <div>• Courbes élémentaires</div>
+                        <div>• Courbes classiques</div>
+                        <div>• Spirales et courbes spéciales</div>
+                    </div>
+                </div>
+                <div class="module-card-footer">
+                    <button class="btn btn-secondary btn-sm">Explorer</button>
+                </div>
+            </div>
+            
+            <div class="module-card">
+                <div class="module-card-header">
+                    <span class="module-card-icon">3️⃣</span>
+                    <span>Module 3</span>
+                </div>
+                <div class="module-card-content">
+                    <h3 class="module-card-title">Analyse des courbes paramétriques</h3>
+                    <p class="module-card-description">Méthodes pour analyser les propriétés géométriques des courbes.</p>
+                    <div class="module-card-courses">
+                        <div>• Propriétés géométriques</div>
+                        <div>• Mouvement et dynamique</div>
+                    </div>
+                </div>
+                <div class="module-card-footer">
+                    <button class="btn btn-secondary btn-sm">Explorer</button>
+                </div>
+            </div>
+            
+            <!-- Carte "Voir plus" -->
+            <div class="module-card" style="background: linear-gradient(45deg, var(--color-primary-light), var(--color-secondary-light)); color: white;">
+                <div class="module-card-content" style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+                    <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">+</div>
+                    <h3 class="module-card-title" style="color: white;">Découvrir les autres modules</h3>
+                    <p>Exploration 3D, surfaces paramétriques, applications avancées, et plus encore...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Présentation interactive -->
+    <section class="home-section">
+        <div class="feature-showcase">
+            <div class="showcase-content">
+                <h2 class="showcase-title">Une approche visuelle et interactive</h2>
+                <p class="showcase-description">Notre plateforme vous permet de comprendre intuitivement les équations paramétriques grâce à des visualisations interactives et des explications claires.</p>
+                
+                <div class="showcase-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-text">
+                            <div class="feature-title">Visualisations dynamiques</div>
+                            <p>Manipulez les paramètres et observez leurs effets en temps réel.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🧩</div>
+                        <div class="feature-text">
+                            <div class="feature-title">Exercices interactifs</div>
+                            <p>Testez votre compréhension avec des exercices pratiques et des quiz.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔍</div>
+                        <div class="feature-text">
+                            <div class="feature-title">Exploration progressive</div>
+                            <p>Avancez à votre rythme, des concepts fondamentaux aux applications avancées.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="showcase-visual" id="parametric-demo">
+                <!-- Visualisation interactive générée par JavaScript -->
+                <div style="text-align: center; padding: var(--spacing-md);">
+                    <p>Chargement de la démonstration...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi étudier les équations paramétriques -->
+    <section class="home-section">
+        <h2 class="home-section-title">Pourquoi étudier les équations paramétriques ?</h2>
+        <p>Les équations paramétriques offrent une perspective puissante et polyvalente dans de nombreux domaines.</p>
+        
+        <div class="why-study">
+            <div class="reason-card">
+                <div class="reason-icon">🔬</div>
+                <h3 class="reason-title">Sciences et physique</h3>
+                <p class="reason-description">Modélisez des trajectoires, des mouvements et des phénomènes naturels avec précision.</p>
+            </div>
+            
+            <div class="reason-card">
+                <div class="reason-icon">🎮</div>
+                <h3 class="reason-title">Animation et jeux</h3>
+                <p class="reason-description">Créez des animations fluides et des simulations réalistes pour les jeux vidéo.</p>
+            </div>
+            
+            <div class="reason-card">
+                <div class="reason-icon">🏗️</div>
+                <h3 class="reason-title">Conception et architecture</h3>
+                <p class="reason-description">Concevez des formes complexes et des structures innovantes en architecture.</p>
+            </div>
+            
+            <div class="reason-card">
+                <div class="reason-icon">🧬</div>
+                <h3 class="reason-title">Modélisation 3D</h3>
+                <p class="reason-description">Représentez des objets tridimensionnels avec flexibilité et précision.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignage -->
+    <section class="testimonial-card">
+        <div class="testimonial-content">
+            Les équations paramétriques m'ont toujours semblé abstraites jusqu'à ce que je découvre cette plateforme. Les visualisations interactives m'ont permis de comprendre intuitivement des concepts qui me paraissaient inaccessibles auparavant. L'approche progressive et les exercices pratiques ont transformé mon apprentissage.
+        </div>
+        <div class="testimonial-author">
+            <div class="testimonial-avatar">S</div>
+            <div class="testimonial-info">
+                <div class="testimonial-name">Sophie D.</div>
+                <div class="testimonial-role">Étudiante en ingénierie</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide de démarrage rapide -->
+    <section class="quick-start">
+        <h2 class="quick-start-title">Comment commencer ?</h2>
+        <p>Suivez ces étapes simples pour débuter votre apprentissage des équations paramétriques.</p>
+        
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-title">Concepts fondamentaux</div>
+                <p class="step-description">Commencez par comprendre ce qu'est une équation paramétrique.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-title">Explorez les courbes</div>
+                <p class="step-description">Découvrez les différentes courbes paramétriques et leurs propriétés.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-title">Pratiquez</div>
+                <p class="step-description">Testez votre compréhension avec des exercices interactifs.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-title">Appliquez</div>
+                <p class="step-description">Utilisez vos connaissances pour résoudre des problèmes concrets.</p>
+            </div>
+        </div>
+        
+        <div class="quick-start-buttons">
+            <button id="quick-start-btn" class="btn btn-primary">Démarrer avec le Module 1</button>
+        </div>
+    </section>
+
+    <!-- Appel à l'action final -->
+    <section class="cta">
+        <h2 class="cta-title">Prêt à explorer les équations paramétriques ?</h2>
+        <p class="cta-description">Commencez dès maintenant votre parcours d'apprentissage et découvrez la beauté et la puissance des équations paramétriques.</p>
+        <div class="cta-buttons">
+            <button id="final-start-btn" class="btn btn-primary">Commencer l'apprentissage</button>
+            <button id="explore-modules-btn" class="btn btn-secondary">Explorer les modules</button>
+        </div>
+    </section>
+</div>

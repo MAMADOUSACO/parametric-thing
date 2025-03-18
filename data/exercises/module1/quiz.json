@@ -1,0 +1,306 @@
+{
+    "id": "module1-quiz",
+    "title": "Quiz: Fondamentaux et introduction",
+    "description": "Testez vos connaissances sur les concepts fondamentaux des équations paramétriques",
+    "timeLimit": 0,
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qui caractérise une représentation paramétrique d'une courbe ?",
+        "type": "multiple-choice",
+        "multiple": false,
+        "options": [
+          {
+            "id": "q1_a",
+            "text": "Une équation de la forme y = f(x)",
+            "correct": false
+          },
+          {
+            "id": "q1_b",
+            "text": "Une équation de la forme F(x, y) = 0",
+            "correct": false
+          },
+          {
+            "id": "q1_c",
+            "text": "Des équations de la forme x = f(t) et y = g(t)",
+            "correct": true
+          },
+          {
+            "id": "q1_d",
+            "text": "Une équation polynomiale de degré supérieur à 2",
+            "correct": false
+          }
+        ],
+        "explanation": "Une courbe paramétrique est définie par des équations où les coordonnées x et y s'expriment en fonction d'un paramètre t, soit x = f(t) et y = g(t). Cela permet de représenter des courbes plus complexes que celles définies par les formes classiques y = f(x) ou F(x, y) = 0."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle courbe est représentée par les équations paramétriques x = 3cos(t) et y = 3sin(t) pour t ∈ [0, 2π] ?",
+        "type": "multiple-choice",
+        "multiple": false,
+        "options": [
+          {
+            "id": "q2_a",
+            "text": "Un cercle de rayon 3 centré à l'origine",
+            "correct": true
+          },
+          {
+            "id": "q2_b",
+            "text": "Une ellipse de demi-axes 3 et 3",
+            "correct": false
+          },
+          {
+            "id": "q2_c",
+            "text": "Une ligne droite passant par l'origine",
+            "correct": false
+          },
+          {
+            "id": "q2_d",
+            "text": "Une parabole de sommet (0, 0)",
+            "correct": false
+          }
+        ],
+        "explanation": "Les équations x = 3cos(t) et y = 3sin(t) représentent un cercle de rayon 3 centré à l'origine. Pour le vérifier, on peut utiliser l'identité trigonométrique cos²(t) + sin²(t) = 1, ce qui donne (x/3)² + (y/3)² = 1, soit x² + y² = 9, l'équation cartésienne d'un cercle de rayon 3 centré à l'origine."
+      },
+      {
+        "id": "q3",
+        "text": "Lequel des énoncés suivants n'est PAS un avantage des équations paramétriques par rapport aux équations cartésiennes ?",
+        "type": "multiple-choice",
+        "multiple": false,
+        "options": [
+          {
+            "id": "q3_a",
+            "text": "Elles peuvent représenter des courbes où un même x correspond à plusieurs valeurs de y",
+            "correct": false
+          },
+          {
+            "id": "q3_b",
+            "text": "Elles peuvent décrire naturellement le mouvement d'un point au fil du temps",
+            "correct": false
+          },
+          {
+            "id": "q3_c",
+            "text": "Elles sont toujours plus simples à manipuler algébriquement",
+            "correct": true
+          },
+          {
+            "id": "q3_d",
+            "text": "Elles permettent de représenter facilement des courbes fermées",
+            "correct": false
+          }
+        ],
+        "explanation": "Les équations paramétriques ne sont pas toujours plus simples à manipuler algébriquement. En effet, certaines opérations comme trouver les points d'intersection ou calculer des tangentes peuvent être plus complexes avec des équations paramétriques qu'avec des équations cartésiennes. Les autres options sont toutes des avantages réels des équations paramétriques."
+      },
+      {
+        "id": "q4",
+        "text": "Si une courbe paramétrique est définie par x = t² et y = t³, quelle est sa représentation cartésienne ?",
+        "type": "multiple-choice",
+        "multiple": false,
+        "options": [
+          {
+            "id": "q4_a",
+            "text": "y = x",
+            "correct": false
+          },
+          {
+            "id": "q4_b",
+            "text": "y = x^(3/2)",
+            "correct": true
+          },
+          {
+            "id": "q4_c",
+            "text": "y² = x³",
+            "correct": false
+          },
+          {
+            "id": "q4_d",
+            "text": "y = x²",
+            "correct": false
+          }
+        ],
+        "explanation": "Pour trouver la représentation cartésienne, il faut éliminer le paramètre t. De x = t², on déduit t = √x. En substituant dans y = t³, on obtient y = (√x)³ = x^(3/2)."
+      },
+      {
+        "id": "q5",
+        "text": "Quelles sont les équations paramétriques d'une droite passant par les points (2, 3) et (5, 7) ?",
+        "type": "multiple-choice",
+        "multiple": false,
+        "options": [
+          {
+            "id": "q5_a",
+            "text": "x = 2 + 3t, y = 3 + 4t",
+            "correct": true
+          },
+          {
+            "id": "q5_b",
+            "text": "x = 2 + t, y = 3 + t",
+            "correct": false
+          },
+          {
+            "id": "q5_c",
+            "text": "x = 5t, y = 7t",
+            "correct": false
+          },
+          {
+            "id": "q5_d",
+            "text": "x = 2 + 5t, y = 3 + 7t",
+            "correct": false
+          }
+        ],
+        "explanation": "Pour paramétrer une droite passant par deux points (x₁, y₁) et (x₂, y₂), on peut utiliser les équations x = x₁ + (x₂ - x₁)t et y = y₁ + (y₂ - y₁)t. Ici, avec (2, 3) et (5, 7), on obtient x = 2 + (5 - 2)t = 2 + 3t et y = 3 + (7 - 3)t = 3 + 4t."
+      },
+      {
+        "id": "q6",
+        "text": "Comment peut-on interpréter le paramètre t dans les équations paramétriques d'une courbe ?",
+        "type": "multiple-choice",
+        "multiple": true,
+        "options": [
+          {
+            "id": "q6_a",
+            "text": "Comme le temps dans un mouvement",
+            "correct": true
+          },
+          {
+            "id": "q6_b",
+            "text": "Comme un angle dans le cas d'un cercle",
+            "correct": true
+          },
+          {
+            "id": "q6_c",
+            "text": "Comme une distance parcourue le long de la courbe",
+            "correct": true
+          },
+          {
+            "id": "q6_d",
+            "text": "Comme l'aire sous la courbe",
+            "correct": false
+          }
+        ],
+        "explanation": "Le paramètre t peut être interprété de différentes façons selon le contexte : comme le temps dans un mouvement (interprétation cinématique), comme un angle dans le cas d'un cercle ou d'une spirale, ou comme une distance parcourue le long de la courbe. Il ne représente généralement pas l'aire sous la courbe."
+      },
+      {
+        "id": "q7",
+        "text": "Quel est l'avantage principal d'utiliser des équations paramétriques pour décrire un mouvement ?",
+        "type": "multiple-choice",
+        "multiple": false,
+        "options": [
+          {
+            "id": "q7_a",
+            "text": "Elles permettent de calculer plus facilement l'aire de la trajectoire",
+            "correct": false
+          },
+          {
+            "id": "q7_b",
+            "text": "Elles donnent directement la position en fonction du temps",
+            "correct": true
+          },
+          {
+            "id": "q7_c",
+            "text": "Elles sont toujours plus simples que les équations cartésiennes",
+            "correct": false
+          },
+          {
+            "id": "q7_d",
+            "text": "Elles ne nécessitent jamais de dérivées pour être analysées",
+            "correct": false
+          }
+        ],
+        "explanation": "L'avantage principal d'utiliser des équations paramétriques pour décrire un mouvement est qu'elles donnent directement la position (x, y) en fonction du temps t. De plus, les dérivées dx/dt et dy/dt donnent les composantes de la vitesse, ce qui est très utile en physique et en animation."
+      },
+      {
+        "id": "q8",
+        "text": "Pour une ellipse centrée à l'origine avec des demi-axes a et b, quelles sont les équations paramétriques correctes ?",
+        "type": "multiple-choice",
+        "multiple": false,
+        "options": [
+          {
+            "id": "q8_a",
+            "text": "x = a + bcos(t), y = a + bsin(t)",
+            "correct": false
+          },
+          {
+            "id": "q8_b",
+            "text": "x = acos(t), y = bsin(t)",
+            "correct": true
+          },
+          {
+            "id": "q8_c",
+            "text": "x = asin(t), y = bcos(t)",
+            "correct": false
+          },
+          {
+            "id": "q8_d",
+            "text": "x = acos²(t), y = bsin²(t)",
+            "correct": false
+          }
+        ],
+        "explanation": "Les équations paramétriques d'une ellipse centrée à l'origine avec des demi-axes a et b sont x = acos(t) et y = bsin(t), où t est l'angle paramétrique. On peut vérifier que ces équations satisfont l'équation cartésienne de l'ellipse (x/a)² + (y/b)² = 1."
+      },
+      {
+        "id": "q9",
+        "text": "Laquelle de ces courbes ne peut PAS être représentée par une équation de la forme y = f(x) mais peut l'être facilement avec des équations paramétriques ?",
+        "type": "multiple-choice",
+        "multiple": false,
+        "options": [
+          {
+            "id": "q9_a",
+            "text": "Une parabole d'axe horizontal",
+            "correct": false
+          },
+          {
+            "id": "q9_b",
+            "text": "Un cercle",
+            "correct": true
+          },
+          {
+            "id": "q9_c",
+            "text": "Une fonction exponentielle",
+            "correct": false
+          },
+          {
+            "id": "q9_d",
+            "text": "Une fonction linéaire",
+            "correct": false
+          }
+        ],
+        "explanation": "Un cercle ne peut pas être représenté par une seule équation de la forme y = f(x) car pour chaque valeur de x (sauf aux extrémités), il existe deux valeurs de y correspondantes. En revanche, un cercle peut être facilement représenté par les équations paramétriques x = rcos(t) et y = rsin(t)."
+      },
+      {
+        "id": "q10",
+        "text": "Les équations paramétriques x = cos(3t) et y = sin(2t) pour t ∈ [0, 2π] représentent quelle courbe ?",
+        "type": "multiple-choice",
+        "multiple": false,
+        "options": [
+          {
+            "id": "q10_a",
+            "text": "Un cercle",
+            "correct": false
+          },
+          {
+            "id": "q10_b",
+            "text": "Une ellipse",
+            "correct": false
+          },
+          {
+            "id": "q10_c",
+            "text": "Une courbe de Lissajous",
+            "correct": true
+          },
+          {
+            "id": "q10_d",
+            "text": "Une spirale",
+            "correct": false
+          }
+        ],
+        "explanation": "Les équations x = cos(3t) et y = sin(2t) représentent une courbe de Lissajous, qui est obtenue en combinant deux oscillations harmoniques de fréquences différentes. Dans ce cas, le rapport de fréquence est 3:2, ce qui donne une courbe fermée avec un motif caractéristique."
+      }
+    ],
+    "feedback": {
+      "perfect": "Félicitations ! Vous avez parfaitement compris les concepts fondamentaux des équations paramétriques.",
+      "excellent": "Excellent travail ! Vous maîtrisez très bien les concepts de base des équations paramétriques.",
+      "good": "Bon travail ! Vous avez une bonne compréhension des équations paramétriques, mais il y a encore quelques points à approfondir.",
+      "average": "Vous avez compris certains concepts, mais il serait utile de revoir les notions fondamentales des équations paramétriques.",
+      "poor": "Il semble que vous ayez des difficultés avec les concepts de base. N'hésitez pas à revoir le cours et à refaire ce quiz."
+    }
+  }

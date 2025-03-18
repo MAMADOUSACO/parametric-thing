@@ -1,0 +1,307 @@
+/* 
+ * footer.css - Styles du pied de page pour le site Équations Paramétriques
+ */
+
+/* Structure principale du pied de page */
+.main-footer {
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-divider);
+    padding: var(--spacing-lg) 0;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+/* Contenu du pied de page */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+/* Copyright */
+.footer-content p {
+    margin: 0;
+}
+
+/* Liens du pied de page */
+.footer-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.footer-links a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* Pied de page étendu (optionnel) */
+.footer-extended {
+    background-color: var(--color-surface-variant);
+    padding: var(--spacing-xl) 0;
+    border-top: 1px solid var(--color-divider);
+    margin-top: 0;
+}
+
+.footer-extended-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column-title {
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-primary);
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-column a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.footer-column a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* Logo du pied de page */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-logo img {
+    height: 32px;
+    margin-right: var(--spacing-sm);
+}
+
+.footer-logo-text {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    font-size: var(--font-size-md);
+    line-height: 1.2;
+}
+
+/* Description du site */
+.footer-description {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.5;
+}
+
+/* Icônes sociales */
+.social-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.social-link {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--color-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.social-link:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.social-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Formulaire d'abonnement à la newsletter */
+.newsletter-form {
+    margin-top: var(--spacing-sm);
+}
+
+.newsletter-input-group {
+    display: flex;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--color-divider);
+    border-right: none;
+    border-top-left-radius: var(--border-radius-md);
+    border-bottom-left-radius: var(--border-radius-md);
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-sm);
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.newsletter-button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-top-right-radius: var(--border-radius-md);
+    border-bottom-right-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color var(--transition-fast);
+}
+
+.newsletter-button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* Ligne de séparation */
+.footer-divider {
+    height: 1px;
+    background-color: var(--color-divider);
+    margin: var(--spacing-lg) 0;
+}
+
+/* Pied de page inférieur */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-md);
+    font-size: var(--font-size-xs);
+}
+
+/* Liens des politiques */
+.policy-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.policy-links a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+}
+
+.policy-links a:hover {
+    text-decoration: underline;
+}
+
+/* Badge "Construit avec" */
+.built-with {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--color-text-tertiary);
+}
+
+.built-with-logo {
+    height: 16px;
+}
+
+/* Bouton de retour en haut */
+.back-to-top {
+    position: fixed;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-fast);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 90;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-links {
+        margin-top: var(--spacing-sm);
+    }
+    
+    .footer-extended-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .footer-column {
+        text-align: center;
+    }
+    
+    .footer-logo {
+        justify-content: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .policy-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

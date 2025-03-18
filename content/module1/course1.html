@@ -1,0 +1,864 @@
+<div class="course-container">
+    <!-- En-tête du cours -->
+    <header class="course-header">
+        <h1 class="course-title">Qu'est-ce qu'une équation paramétrique ?</h1>
+        <p class="course-subtitle">Introduction au concept fondamental des équations paramétriques</p>
+        
+        <div class="course-meta">
+            <div class="course-meta-item">
+                <span class="course-meta-icon">⏱️</span>
+                <span>Durée estimée: 20 minutes</span>
+            </div>
+            <div class="course-meta-item">
+                <span class="course-meta-icon">📊</span>
+                <span>Difficulté: Débutant</span>
+            </div>
+            <div class="course-meta-item">
+                <span class="course-meta-icon">📚</span>
+                <span>Module: Fondamentaux et introduction</span>
+            </div>
+        </div>
+        
+        <div class="course-tags">
+            <div class="course-tag">Fondamentaux</div>
+            <div class="course-tag">Théorie</div>
+            <div class="course-tag">2D</div>
+        </div>
+        
+        <div class="course-progress-bar">
+            <div class="course-progress-fill" style="width: 0%"></div>
+        </div>
+    </header>
+    
+    <!-- Table des matières -->
+    <div class="course-toc" id="course-toc">
+        <div class="course-toc-title">
+            <span>Table des matières</span>
+            <span class="course-toc-toggle">▼</span>
+        </div>
+        
+        <ul class="course-toc-list">
+            <li class="course-toc-item">
+                <a href="#section-1" class="course-toc-link">
+                    <span class="course-toc-number">1</span>
+                    <span class="course-toc-text">Introduction aux équations paramétriques</span>
+                </a>
+            </li>
+            <li class="course-toc-item">
+                <a href="#section-2" class="course-toc-link">
+                    <span class="course-toc-number">2</span>
+                    <span class="course-toc-text">Définition formelle</span>
+                </a>
+            </li>
+            <li class="course-toc-item">
+                <a href="#section-3" class="course-toc-link">
+                    <span class="course-toc-number">3</span>
+                    <span class="course-toc-text">Équations paramétriques vs cartésiennes</span>
+                </a>
+            </li>
+            <li class="course-toc-item">
+                <a href="#section-4" class="course-toc-link">
+                    <span class="course-toc-number">4</span>
+                    <span class="course-toc-text">Premier exemple : la ligne droite</span>
+                </a>
+            </li>
+            <li class="course-toc-item">
+                <a href="#section-5" class="course-toc-link">
+                    <span class="course-toc-number">5</span>
+                    <span class="course-toc-text">Deuxième exemple : le cercle</span>
+                </a>
+            </li>
+            <li class="course-toc-item">
+                <a href="#section-6" class="course-toc-link">
+                    <span class="course-toc-number">6</span>
+                    <span class="course-toc-text">Interprétation du paramètre</span>
+                </a>
+            </li>
+            <li class="course-toc-item">
+                <a href="#section-7" class="course-toc-link">
+                    <span class="course-toc-number">7</span>
+                    <span class="course-toc-text">Applications pratiques</span>
+                </a>
+            </li>
+            <li class="course-toc-item">
+                <a href="#quiz" class="course-toc-link">
+                    <span class="course-toc-number">🧠</span>
+                    <span class="course-toc-text">Quiz</span>
+                </a>
+            </li>
+            <li class="course-toc-item">
+                <a href="#summary" class="course-toc-link">
+                    <span class="course-toc-number">📝</span>
+                    <span class="course-toc-text">Résumé</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- Contenu du cours -->
+    <div class="course-content">
+        <!-- Section 1 -->
+        <section id="section-1" class="course-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Introduction aux équations paramétriques
+                    <a href="#section-1" class="section-anchor">#</a>
+                </h2>
+            </div>
+            
+            <p class="section-introduction">
+                Les équations paramétriques offrent une façon puissante et intuitive de décrire des courbes mathématiques, en utilisant un paramètre pour contrôler la progression le long de la courbe.
+            </p>
+            
+            <p>
+                Dans la géométrie analytique traditionnelle, nous décrivons généralement une courbe dans le plan en utilisant une équation qui relie directement les coordonnées $x$ et $y$. Par exemple, l'équation d'un cercle centré à l'origine avec un rayon $r$ est $x^2 + y^2 = r^2$. Cette approche est connue sous le nom de <span class="important">représentation cartésienne</span>.
+            </p>
+            
+            <p>
+                Cependant, il existe une autre façon de décrire les courbes : au lieu de relier directement $x$ et $y$, nous pouvons exprimer chaque coordonnée comme une fonction d'une troisième variable, généralement notée $t$ et appelée <span class="important">paramètre</span>. Cette approche est connue sous le nom de <span class="important">représentation paramétrique</span>.
+            </p>
+            
+            <p>
+                Une équation paramétrique décrit donc une courbe en donnant les coordonnées de chaque point de la courbe comme des fonctions d'un paramètre. En faisant varier ce paramètre, nous pouvons "parcourir" la courbe.
+            </p>
+            
+            <div class="demo-container">
+                <div class="demo-header">
+                    <div class="demo-title">Démonstration : Point se déplaçant sur une courbe</div>
+                </div>
+                
+                <div id="intro-parametric-demo" class="parametric-graph" data-width="600" data-height="400" data-x-equation="5 * Math.cos(t)" data-y-equation="5 * Math.sin(t)" data-show-controls="true" data-autoplay="true">
+                    <!-- La démonstration sera chargée par JavaScript -->
+                </div>
+                
+                <p class="demo-caption">
+                    Visualisation d'un point se déplaçant sur un cercle selon les équations paramétriques $x = 5\cos(t)$ et $y = 5\sin(t)$. Déplacez le curseur pour voir comment le paramètre $t$ contrôle la position du point.
+                </p>
+            </div>
+            
+            <p>
+                Cette démonstration illustre parfaitement le concept : le paramètre $t$ peut être considéré comme le "temps" qui s'écoule, et les équations paramétriques nous indiquent où se trouve le point à chaque instant.
+            </p>
+        </section>
+        
+        <!-- Section 2 -->
+        <section id="section-2" class="course-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Définition formelle
+                    <a href="#section-2" class="section-anchor">#</a>
+                </h2>
+            </div>
+            
+            <p>
+                Formellement, une <span class="important">courbe paramétrique plane</span> est définie par un ensemble d'équations :
+            </p>
+            
+            <div class="math-block">
+                \begin{align}
+                x &= f(t) \\
+                y &= g(t)
+                \end{align}
+            </div>
+            
+            <p>
+                où $f$ et $g$ sont des fonctions du paramètre $t$, et $t$ varie généralement dans un intervalle donné, par exemple $t \in [a, b]$.
+            </p>
+            
+            <p>
+                Pour chaque valeur de $t$ dans cet intervalle, les équations donnent un point $(x, y)$ dans le plan. L'ensemble de tous ces points, lorsque $t$ parcourt l'intervalle, forme la courbe paramétrique.
+            </p>
+            
+            <div class="concept-card">
+                <div class="concept-card-bg">𝑓(𝑡)</div>
+                <div class="concept-card-content">
+                    <h3 class="concept-card-title">Points clés à retenir</h3>
+                    <ul>
+                        <li>Une courbe paramétrique est définie par des fonctions qui expriment les coordonnées en termes d'un paramètre.</li>
+                        <li>Le paramètre $t$ peut être interprété comme le "temps" ou comme un paramètre qui contrôle la position sur la courbe.</li>
+                        <li>La courbe est obtenue en calculant les coordonnées $(x, y)$ pour chaque valeur de $t$ dans un intervalle donné.</li>
+                        <li>Les équations paramétriques permettent de représenter des courbes qui ne peuvent pas être facilement exprimées sous forme cartésienne.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 3 -->
+        <section id="section-3" class="course-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Équations paramétriques vs cartésiennes
+                    <a href="#section-3" class="section-anchor">#</a>
+                </h2>
+            </div>
+            
+            <p>
+                Il est important de comprendre les différences et les avantages des équations paramétriques par rapport aux équations cartésiennes.
+            </p>
+            
+            <h3 class="section-subtitle">Comparaison des deux approches</h3>
+            
+            <div class="concept-card">
+                <div class="concept-card-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Représentation cartésienne</th>
+                                <th>Représentation paramétrique</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Forme</td>
+                                <td>$F(x, y) = 0$ ou $y = f(x)$</td>
+                                <td>$x = f(t)$, $y = g(t)$</td>
+                            </tr>
+                            <tr>
+                                <td>Parcours de la courbe</td>
+                                <td>Pas de notion intrinsèque de direction ou de parcours</td>
+                                <td>Le paramètre $t$ définit un parcours naturel de la courbe</td>
+                            </tr>
+                            <tr>
+                                <td>Multiple valeurs de $y$ pour un $x$</td>
+                                <td>Difficile à représenter (nécessite plusieurs équations)</td>
+                                <td>Naturellement possible</td>
+                            </tr>
+                            <tr>
+                                <td>Courbes fermées</td>
+                                <td>Peut nécessiter plusieurs équations</td>
+                                <td>Facilement représentables</td>
+                            </tr>
+                            <tr>
+                                <td>Propriétés cinématiques</td>
+                                <td>Difficiles à exprimer</td>
+                                <td>Naturellement exprimées si $t$ représente le temps</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">Avantages des équations paramétriques</h3>
+            
+            <p>
+                Les équations paramétriques présentent plusieurs avantages :
+            </p>
+            
+            <ul>
+                <li><strong>Flexibilité</strong> : Elles peuvent représenter des courbes qui ne sont pas des fonctions de $x$ (comme les cercles ou les courbes qui reviennent sur elles-mêmes).</li>
+                <li><strong>Mouvement</strong> : Elles décrivent naturellement le mouvement d'un point au fil du temps.</li>
+                <li><strong>Simplicité</strong> : Certaines courbes complexes ont des représentations paramétriques simples.</li>
+                <li><strong>Propriétés dynamiques</strong> : Elles permettent de calculer facilement des propriétés comme la vitesse et l'accélération.</li>
+            </ul>
+            
+            <h3 class="section-subtitle">Conversion entre les représentations</h3>
+            
+            <p>
+                Il est souvent possible de convertir entre les représentations cartésienne et paramétrique :
+            </p>
+            
+            <ul>
+                <li>
+                    <strong>De paramétrique à cartésienne</strong> : Éliminer le paramètre $t$ des équations $x = f(t)$ et $y = g(t)$ pour obtenir une équation de la forme $F(x, y) = 0$.
+                </li>
+                <li>
+                    <strong>De cartésienne à paramétrique</strong> : Trouver un paramétrage approprié qui génère la courbe décrite par l'équation cartésienne.
+                </li>
+            </ul>
+            
+            <p>
+                Nous explorerons ces conversions plus en détail dans un cours ultérieur.
+            </p>
+        </section>
+        
+        <!-- Section 4 -->
+        <section id="section-4" class="course-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Premier exemple : la ligne droite
+                    <a href="#section-4" class="section-anchor">#</a>
+                </h2>
+            </div>
+            
+            <p>
+                Commençons par l'exemple le plus simple : une ligne droite. En représentation cartésienne, une ligne droite peut être écrite sous la forme $y = mx + b$, où $m$ est la pente et $b$ l'ordonnée à l'origine.
+            </p>
+            
+            <p>
+                En représentation paramétrique, une ligne droite peut être décrite par :
+            </p>
+            
+            <div class="math-block">
+                \begin{align}
+                x &= x_0 + at \\
+                y &= y_0 + bt
+                \end{align}
+            </div>
+            
+            <p>
+                où $(x_0, y_0)$ est un point de la droite (souvent l'origine), et $(a, b)$ est un vecteur directeur de la droite. Le paramètre $t$ peut prendre n'importe quelle valeur réelle.
+            </p>
+            
+            <p>
+                Par exemple, pour une droite passant par l'origine avec une pente de 2, nous pouvons choisir $(x_0, y_0) = (0, 0)$ et $(a, b) = (1, 2)$, ce qui donne les équations paramétriques :
+            </p>
+            
+            <div class="math-block">
+                \begin{align}
+                x &= t \\
+                y &= 2t
+                \end{align}
+            </div>
+            
+            <div class="demo-container">
+                <div class="demo-header">
+                    <div class="demo-title">Démonstration : Ligne droite paramétrique</div>
+                </div>
+                
+                <div id="line-parametric-demo" class="parametric-graph" data-width="600" data-height="400" data-x-equation="t" data-y-equation="2*t" data-t-range="[-5, 5]" data-show-controls="true">
+                    <!-- La démonstration sera chargée par JavaScript -->
+                </div>
+                
+                <p class="demo-caption">
+                    Visualisation d'une ligne droite paramétrique. Observez comment le point se déplace le long de la droite lorsque le paramètre $t$ varie.
+                </p>
+            </div>
+            
+            <p>
+                Un avantage de cette représentation paramétrique est qu'elle permet de représenter n'importe quelle droite, même verticale (ce qui poserait problème avec la forme cartésienne $y = mx + b$).
+            </p>
+            
+            <div class="exercise">
+                <div class="exercise-header">
+                    <span class="exercise-type">Exercice</span>
+                    <h3 class="exercise-title">Paramétrage d'une droite</h3>
+                    <div class="exercise-difficulty">
+                        <div class="difficulty-dot active"></div>
+                        <div class="difficulty-dot"></div>
+                        <div class="difficulty-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="exercise-content">
+                    <p>Trouvez les équations paramétriques d'une droite passant par les points $(1, 3)$ et $(4, 7)$.</p>
+                </div>
+                
+                <div class="exercise-options">
+                    <div class="exercise-option" data-correct="false">
+                        <input type="radio" name="line-exercise" class="exercise-radio">
+                        <span class="exercise-label">$x = 1 + 3t$, $y = 3 + 4t$</span>
+                    </div>
+                    <div class="exercise-option" data-correct="true">
+                        <input type="radio" name="line-exercise" class="exercise-radio">
+                        <span class="exercise-label">$x = 1 + 3t$, $y = 3 + 4t$</span>
+                    </div>
+                    <div class="exercise-option" data-correct="false">
+                        <input type="radio" name="line-exercise" class="exercise-radio">
+                        <span class="exercise-label">$x = 1 + 4t$, $y = 3 + 7t$</span>
+                    </div>
+                    <div class="exercise-option" data-correct="false">
+                        <input type="radio" name="line-exercise" class="exercise-radio">
+                        <span class="exercise-label">$x = 3 + t$, $y = 1 + 4t$</span>
+                    </div>
+                </div>
+                
+                <div class="exercise-answer">
+                    <div class="exercise-answer-header">
+                        <span class="exercise-answer-icon correct">✓</span>
+                        <span>Réponse correcte !</span>
+                    </div>
+                    
+                    <div class="exercise-explanation">
+                        <p>Pour trouver les équations paramétriques d'une droite passant par deux points, nous pouvons utiliser le premier point comme point de départ et calculer le vecteur directeur comme la différence entre les deux points.</p>
+                        
+                        <p>Dans ce cas, nous avons :</p>
+                        <ul>
+                            <li>Point de départ : $(x_0, y_0) = (1, 3)$</li>
+                            <li>Vecteur directeur : $(a, b) = (4 - 1, 7 - 3) = (3, 4)$</li>
+                        </ul>
+                        
+                        <p>Les équations paramétriques sont donc :</p>
+                        <p>$x = 1 + 3t$</p>
+                        <p>$y = 3 + 4t$</p>
+                        
+                        <p>Pour $t = 0$, nous obtenons le point $(1, 3)$, et pour $t = 1$, nous obtenons le point $(4, 7)$.</p>
+                    </div>
+                </div>
+                
+                <div class="exercise-controls">
+                    <button class="btn btn-primary check-answer-btn">Vérifier</button>
+                    <button class="btn btn-secondary show-solution-btn">Voir la solution</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 5 -->
+        <section id="section-5" class="course-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Deuxième exemple : le cercle
+                    <a href="#section-5" class="section-anchor">#</a>
+                </h2>
+            </div>
+            
+            <p>
+                Le cercle est un exemple parfait pour illustrer la puissance des équations paramétriques. En représentation cartésienne, un cercle centré à l'origine avec un rayon $r$ est décrit par l'équation $x^2 + y^2 = r^2$.
+            </p>
+            
+            <p>
+                En représentation paramétrique, ce même cercle peut être décrit par :
+            </p>
+            
+            <div class="math-block">
+                \begin{align}
+                x &= r\cos(t) \\
+                y &= r\sin(t)
+                \end{align}
+            </div>
+            
+            <p>
+                où $t$ est généralement dans l'intervalle $[0, 2\pi]$ pour un cercle complet. Lorsque $t$ varie de $0$ à $2\pi$, le point $(x, y)$ parcourt le cercle dans le sens anti-horaire, en commençant par le point $(r, 0)$.
+            </p>
+            
+            <div class="demo-container">
+                <div class="demo-header">
+                    <div class="demo-title">Démonstration : Cercle paramétrique</div>
+                </div>
+                
+                <div id="circle-parametric-demo" class="parametric-graph" data-width="600" data-height="400" data-x-equation="4 * Math.cos(t)" data-y-equation="4 * Math.sin(t)" data-t-range="[0, 6.28]" data-show-controls="true">
+                    <!-- La démonstration sera chargée par JavaScript -->
+                </div>
+                
+                <p class="demo-caption">
+                    Visualisation d'un cercle paramétrique de rayon 4. Observez comment le paramètre $t$ correspond à l'angle par rapport à l'axe positif des $x$.
+                </p>
+            </div>
+            
+            <p>
+                Plus généralement, pour un cercle centré au point $(h, k)$ avec un rayon $r$, les équations paramétriques sont :
+            </p>
+            
+            <div class="math-block">
+                \begin{align}
+                x &= h + r\cos(t) \\
+                y &= k + r\sin(t)
+                \end{align}
+            </div>
+            
+            <div class="theorem-card">
+                <h3 class="theorem-title">Propriété importante</h3>
+                <p class="theorem-statement">
+                    Pour toute valeur de $t$, le point $(r\cos(t), r\sin(t))$ se trouve sur le cercle de rayon $r$ centré à l'origine.
+                </p>
+                <div class="theorem-proof">
+                    <h4 class="theorem-proof-title">Preuve :</h4>
+                    <p>
+                        Vérifions que le point $(x, y) = (r\cos(t), r\sin(t))$ satisfait l'équation cartésienne du cercle $x^2 + y^2 = r^2$ :
+                    </p>
+                    <div class="math-block">
+                        \begin{align}
+                        x^2 + y^2 &= (r\cos(t))^2 + (r\sin(t))^2 \\
+                        &= r^2\cos^2(t) + r^2\sin^2(t) \\
+                        &= r^2(\cos^2(t) + \sin^2(t)) \\
+                        &= r^2 \cdot 1 \\
+                        &= r^2
+                        \end{align}
+                    </div>
+                    <p>
+                        La dernière égalité vient de l'identité trigonométrique fondamentale $\cos^2(t) + \sin^2(t) = 1$.
+                    </p>
+                </div>
+            </div>
+            
+            <p>
+                Cet exemple illustre bien comment les équations paramétriques peuvent simplifier la représentation de certaines courbes. De plus, elles fournissent naturellement une façon de parcourir la courbe.
+            </p>
+        </section>
+        
+        <!-- Section 6 -->
+        <section id="section-6" class="course-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Interprétation du paramètre
+                    <a href="#section-6" class="section-anchor">#</a>
+                </h2>
+            </div>
+            
+            <p>
+                Le paramètre $t$ dans les équations paramétriques peut être interprété de différentes façons selon le contexte :
+            </p>
+            
+            <h3 class="section-subtitle">Interprétation temporelle</h3>
+            
+            <p>
+                Lorsque $t$ représente le temps, les équations paramétriques décrivent la position d'un point mobile au fil du temps. Dans ce cas :
+            </p>
+            
+            <ul>
+                <li>$x = f(t)$ et $y = g(t)$ donnent la position du point au temps $t$.</li>
+                <li>Les dérivées $\frac{dx}{dt} = f'(t)$ et $\frac{dy}{dt} = g'(t)$ représentent les composantes de la vitesse.</li>
+                <li>Les dérivées secondes $\frac{d^2x}{dt^2} = f''(t)$ et $\frac{d^2y}{dt^2} = g''(t)$ représentent les composantes de l'accélération.</li>
+            </ul>
+            
+            <div class="note-card">
+                <div class="note-card-title">
+                    <span class="note-card-icon">💡</span>
+                    <span>Note : Application en physique</span>
+                </div>
+                <div class="note-card-content">
+                    En physique, les équations paramétriques sont couramment utilisées pour décrire des trajectoires. Par exemple, le mouvement d'un projectile peut être décrit par les équations paramétriques $x = v_0\cos(\theta)t$ et $y = v_0\sin(\theta)t - \frac{1}{2}gt^2$, où $v_0$ est la vitesse initiale, $\theta$ est l'angle de lancement, et $g$ est l'accélération due à la gravité.
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">Interprétation géométrique</h3>
+            
+            <p>
+                D'un point de vue géométrique, le paramètre $t$ peut représenter différentes quantités selon la courbe :
+            </p>
+            
+            <ul>
+                <li><strong>Pour un cercle</strong> : $t$ peut représenter l'angle par rapport à l'axe des $x$.</li>
+                <li><strong>Pour une ligne droite</strong> : $t$ peut représenter la distance par rapport au point initial.</li>
+                <li><strong>Pour des courbes générales</strong> : $t$ peut être lié à la longueur d'arc parcourue.</li>
+            </ul>
+            
+            <p>
+                Il est important de noter que le même tracé géométrique peut être paramétré de nombreuses façons différentes. Par exemple, pour un cercle, nous pourrions utiliser $x = r\cos(2t)$ et $y = r\sin(2t)$ avec $t \in [0, \pi]$, ce qui parcourt le cercle deux fois plus vite que le paramétrage standard.
+            </p>
+            
+            <div class="demo-container">
+                <div class="demo-header">
+                    <div class="demo-title">Démonstration : Différentes paramétrisations du cercle</div>
+                </div>
+                
+                <div id="param-comparison-demo" class="parametric-graph" data-width="600" data-height="400" data-x-equation="3 * Math.cos(t)" data-y-equation="3 * Math.sin(t)" data-t-range="[0, 6.28]" data-show-controls="true">
+                    <!-- La démonstration sera chargée par JavaScript -->
+                </div>
+                
+                <p class="demo-caption">
+                    Comparez les différentes vitesses de parcours sur un cercle en modifiant les équations paramétriques. Essayez $x = 3\cos(t)$, $y = 3\sin(t)$ puis $x = 3\cos(2t)$, $y = 3\sin(2t)$.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Section 7 -->
+        <section id="section-7" class="course-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Applications pratiques
+                    <a href="#section-7" class="section-anchor">#</a>
+                </h2>
+            </div>
+            
+            <p>
+                Les équations paramétriques ont de nombreuses applications pratiques dans divers domaines :
+            </p>
+            
+            <h3 class="section-subtitle">En physique et en ingénierie</h3>
+            
+            <ul>
+                <li><strong>Mécanique</strong> : Description des trajectoires, des mouvements oscillatoires, des orbites planétaires.</li>
+                <li><strong>Électromagnétisme</strong> : Représentation des champs électriques et magnétiques variables.</li>
+                <li><strong>Robotique</strong> : Planification de trajectoires pour les bras robotiques.</li>
+            </ul>
+            
+            <h3 class="section-subtitle">En informatique graphique</h3>
+            
+            <ul>
+                <li><strong>Animation</strong> : Création de mouvements fluides et complexes pour les objets.</li>
+                <li><strong>Courbes de Bézier</strong> : Conception de courbes lisses utilisées en graphisme vectoriel.</li>
+                <li><strong>Modélisation 3D</strong> : Définition de surfaces et d'objets dans l'espace.</li>
+            </ul>
+            
+            <h3 class="section-subtitle">En mathématiques avancées</h3>
+            
+            <ul>
+                <li><strong>Géométrie différentielle</strong> : Étude des propriétés des courbes et des surfaces.</li>
+                <li><strong>Topologie</strong> : Description de courbes et de nœuds complexes.</li>
+                <li><strong>Systèmes dynamiques</strong> : Représentation de l'évolution temporelle de systèmes.</li>
+            </ul>
+            
+            <div class="figure">
+                <img src="/assets/images/illustrations/module1/parametric-applications.jpg" alt="Applications des équations paramétriques" class="figure-image">
+                <p class="figure-caption">
+                    Différentes applications des équations paramétriques, de gauche à droite : trajectoire d'un satellite, courbe de Bézier, et simulation de mouvement en animation.
+                </p>
+            </div>
+            
+            <p>
+                Ces applications seront explorées plus en détail dans les modules suivants, en particulier dans le module sur les applications avancées.
+            </p>
+        </section>
+        
+        <!-- Quiz -->
+        <section id="quiz" class="course-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Quiz
+                    <a href="#quiz" class="section-anchor">#</a>
+                </h2>
+            </div>
+            
+            <p>
+                Testons votre compréhension des équations paramétriques avec quelques questions.
+            </p>
+            
+            <div class="exercise">
+                <div class="exercise-header">
+                    <span class="exercise-type">Question 1</span>
+                    <h3 class="exercise-title">Définition fondamentale</h3>
+                    <div class="exercise-difficulty">
+                        <div class="difficulty-dot active"></div>
+                        <div class="difficulty-dot"></div>
+                        <div class="difficulty-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="exercise-content">
+                    <p>Qu'est-ce qui caractérise une représentation paramétrique d'une courbe ?</p>
+                </div>
+                
+                <div class="exercise-options">
+                    <div class="exercise-option" data-correct="false">
+                        <input type="radio" name="quiz1" class="exercise-radio">
+                        <span class="exercise-label">Une équation de la forme $y = f(x)$</span>
+                    </div>
+                    <div class="exercise-option" data-correct="false">
+                        <input type="radio" name="quiz1" class="exercise-radio">
+                        <span class="exercise-label">Une équation de la forme $F(x, y) = 0$</span>
+                    </div>
+                    <div class="exercise-option" data-correct="true">
+                        <input type="radio" name="quiz1" class="exercise-radio">
+                        <span class="exercise-label">Des équations de la forme $x = f(t)$ et $y = g(t)$</span>
+                    </div>
+                    <div class="exercise-option" data-correct="false">
+                        <input type="radio" name="quiz1" class="exercise-radio">
+                        <span class="exercise-label">Une équation polynomiale de degré supérieur à 2</span>
+                    </div>
+                </div>
+                
+                <div class="exercise-answer">
+                    <div class="exercise-answer-header">
+                        <span class="exercise-answer-icon correct">✓</span>
+                        <span>Réponse correcte !</span>
+                    </div>
+                    
+                    <div class="exercise-explanation">
+                        <p>La représentation paramétrique d'une courbe exprime les coordonnées $x$ et $y$ en fonction d'un paramètre $t$ : $x = f(t)$ et $y = g(t)$. C'est cette dépendance via un paramètre commun qui caractérise les équations paramétriques.</p>
+                    </div>
+                </div>
+                
+                <div class="exercise-controls">
+                    <button class="btn btn-primary check-answer-btn">Vérifier</button>
+                    <button class="btn btn-secondary show-solution-btn">Voir la solution</button>
+                </div>
+            </div>
+            
+            <div class="exercise">
+                <div class="exercise-header">
+                    <span class="exercise-type">Question 2</span>
+                    <h3 class="exercise-title">Reconnaissance de courbes</h3>
+                    <div class="exercise-difficulty">
+                        <div class="difficulty-dot active"></div>
+                        <div class="difficulty-dot active"></div>
+                        <div class="difficulty-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="exercise-content">
+                    <p>Quelle courbe est représentée par les équations paramétriques $x = 3\cos(t)$ et $y = 3\sin(t)$ pour $t \in [0, 2\pi]$ ?</p>
+                </div>
+                
+                <div class="exercise-options">
+                    <div class="exercise-option" data-correct="true">
+                        <input type="radio" name="quiz2" class="exercise-radio">
+                        <span class="exercise-label">Un cercle de rayon 3 centré à l'origine</span>
+                    </div>
+                    <div class="exercise-option" data-correct="false">
+                        <input type="radio" name="quiz2" class="exercise-radio">
+                        <span class="exercise-label">Une ellipse de demi-axes 3 et 3</span>
+                    </div>
+                    <div class="exercise-option" data-correct="false">
+                        <input type="radio" name="quiz2" class="exercise-radio">
+                        <span class="exercise-label">Une ligne droite passant par l'origine</span>
+                    </div>
+                    <div class="exercise-option" data-correct="false">
+                        <input type="radio" name="quiz2" class="exercise-radio">
+                        <span class="exercise-label">Une parabole de sommet (0, 0)</span>
+                    </div>
+                </div>
+                
+                <div class="exercise-answer">
+                    <div class="exercise-answer-header">
+                        <span class="exercise-answer-icon correct">✓</span>
+                        <span>Réponse correcte !</span>
+                    </div>
+                    
+                    <div class="exercise-explanation">
+                        <p>Les équations paramétriques $x = 3\cos(t)$ et $y = 3\sin(t)$ représentent un cercle de rayon 3 centré à l'origine. Pour le vérifier, nous pouvons éliminer le paramètre $t$ :</p>
+                        <p>$\frac{x}{3} = \cos(t)$ et $\frac{y}{3} = \sin(t)$</p>
+                        <p>En élevant au carré et en additionnant : $\frac{x^2}{9} + \frac{y^2}{9} = \cos^2(t) + \sin^2(t) = 1$</p>
+                        <p>Donc $x^2 + y^2 = 9$, ce qui est l'équation d'un cercle de rayon 3 centré à l'origine.</p>
+                    </div>
+                </div>
+                
+                <div class="exercise-controls">
+                    <button class="btn btn-primary check-answer-btn">Vérifier</button>
+                    <button class="btn btn-secondary show-solution-btn">Voir la solution</button>
+                </div>
+            </div>
+            
+            <div class="exercise">
+                <div class="exercise-header">
+                    <span class="exercise-type">Question 3</span>
+                    <h3 class="exercise-title">Avantages des équations paramétriques</h3>
+                    <div class="exercise-difficulty">
+                        <div class="difficulty-dot active"></div>
+                        <div class="difficulty-dot active"></div>
+                        <div class="difficulty-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="exercise-content">
+                    <p>Lequel des énoncés suivants n'est PAS un avantage des équations paramétriques par rapport aux équations cartésiennes ?</p>
+                </div>
+                
+                <div class="exercise-options">
+                    <div class="exercise-option" data-correct="false">
+                        <input type="radio" name="quiz3" class="exercise-radio">
+                        <span class="exercise-label">Elles peuvent représenter des courbes où un même x correspond à plusieurs valeurs de y</span>
+                    </div>
+                    <div class="exercise-option" data-correct="false">
+                        <input type="radio" name="quiz3" class="exercise-radio">
+                        <span class="exercise-label">Elles peuvent décrire naturellement le mouvement d'un point au fil du temps</span>
+                    </div>
+                    <div class="exercise-option" data-correct="true">
+                        <input type="radio" name="quiz3" class="exercise-radio">
+                        <span class="exercise-label">Elles sont toujours plus simples à manipuler algébriquement</span>
+                    </div>
+                    <div class="exercise-option" data-correct="false">
+                        <input type="radio" name="quiz3" class="exercise-radio">
+                        <span class="exercise-label">Elles permettent de représenter facilement des courbes fermées</span>
+                    </div>
+                </div>
+                
+                <div class="exercise-answer">
+                    <div class="exercise-answer-header">
+                        <span class="exercise-answer-icon correct">✓</span>
+                        <span>Réponse correcte !</span>
+                    </div>
+                    
+                    <div class="exercise-explanation">
+                        <p>Les équations paramétriques ne sont pas toujours plus simples à manipuler algébriquement. En fait, certaines opérations, comme trouver les points d'intersection entre des courbes, peuvent être plus complexes avec des représentations paramétriques. Les autres options sont toutes des avantages véritables des équations paramétriques.</p>
+                    </div>
+                </div>
+                
+                <div class="exercise-controls">
+                    <button class="btn btn-primary check-answer-btn">Vérifier</button>
+                    <button class="btn btn-secondary show-solution-btn">Voir la solution</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Résumé -->
+        <section id="summary" class="course-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Résumé
+                    <a href="#summary" class="section-anchor">#</a>
+                </h2>
+            </div>
+            
+            <div class="course-summary">
+                <h3 class="summary-title">Points clés</h3>
+                
+                <ul class="summary-list">
+                    <li class="summary-item">
+                        <span class="summary-icon">✓</span>
+                        <span>Les équations paramétriques expriment les coordonnées $(x,y)$ d'un point en fonction d'un paramètre $t$ : $x = f(t)$ et $y = g(t)$.</span>
+                    </li>
+                    <li class="summary-item">
+                        <span class="summary-icon">✓</span>
+                        <span>Le paramètre $t$ peut être interprété comme le temps ou comme un autre paramètre géométrique selon le contexte.</span>
+                    </li>
+                    <li class="summary-item">
+                        <span class="summary-icon">✓</span>
+                        <span>Les équations paramétriques permettent de représenter des courbes qui ne sont pas des fonctions de $x$, comme les cercles.</span>
+                    </li>
+                    <li class="summary-item">
+                        <span class="summary-icon">✓</span>
+                        <span>Une ligne droite peut être représentée par $x = x_0 + at$ et $y = y_0 + bt$.</span>
+                    </li>
+                    <li class="summary-item">
+                        <span class="summary-icon">✓</span>
+                        <span>Un cercle peut être représenté par $x = h + r\cos(t)$ et $y = k + r\sin(t)$.</span>
+                    </li>
+                    <li class="summary-item">
+                        <span class="summary-icon">✓</span>
+                        <span>Les équations paramétriques sont particulièrement utiles pour décrire le mouvement et pour les applications en physique, informatique graphique et mathématiques avancées.</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="additional-resources">
+                <h3 class="resources-title">Pour aller plus loin</h3>
+                
+                <div class="resources-list">
+                    <div class="resource-item">
+                        <span class="resource-icon">📖</span>
+                        <div class="resource-content">
+                            <h4 class="resource-title">Cours suivant</h4>
+                            <p class="resource-description">Prérequis mathématiques pour les équations paramétriques</p>
+                        </div>
+                    </div>
+                    <div class="resource-item">
+                        <span class="resource-icon">🎬</span>
+                        <div class="resource-content">
+                            <h4 class="resource-title">Vidéo complémentaire</h4>
+                            <p class="resource-description">Visualisation des courbes paramétriques dans l'espace</p>
+                        </div>
+                    </div>
+                    <div class="resource-item">
+                        <span class="resource-icon">🔗</span>
+                        <div class="resource-content">
+                            <h4 class="resource-title">Outil en ligne</h4>
+                            <p class="resource-description">Simulateur interactif d'équations paramétriques</p>
+                        </div>
+                    </div>
+                    <div class="resource-item">
+                        <span class="resource-icon">📝</span>
+                        <div class="resource-content">
+                            <h4 class="resource-title">Exercices supplémentaires</h4>
+                            <p class="resource-description">Recueil de problèmes sur les équations paramétriques</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="mark-completed-btn">
+                <span class="completed-icon">✓</span>
+                <span>Marquer ce cours comme terminé</span>
+            </button>
+        </section>
+    </div>
+    
+    <!-- Navigation entre cours -->
+    <div class="course-navigation">
+        <a href="#" class="course-nav-prev" style="visibility: hidden;">
+            <span class="nav-arrow">←</span>
+            <div class="nav-content">
+                <div class="nav-label">Précédent</div>
+                <div class="nav-text">Pas de cours précédent</div>
+            </div>
+        </a>
+        
+        <a href="#module1-course2" class="course-nav-next">
+            <div class="nav-content">
+                <div class="nav-label">Suivant</div>
+                <div class="nav-text">Prérequis mathématiques</div>
+            </div>
+            <span class="nav-arrow">→</span>
+        </a>
+    </div>
+</div>

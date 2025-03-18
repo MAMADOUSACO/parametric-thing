@@ -1,0 +1,182 @@
+/* 
+ * light.css - Thème clair (défaut) pour le site Équations Paramétriques
+ */
+
+ :root {
+    /* Palette de couleurs - Thème clair */
+    --color-primary: #0066cc;          /* Bleu primaire */
+    --color-primary-light: #4d94ff;    /* Bleu primaire clair */
+    --color-primary-dark: #004c99;     /* Bleu primaire foncé */
+    
+    --color-secondary: #00aaff;        /* Bleu secondaire */
+    --color-secondary-light: #66ccff;  /* Bleu secondaire clair */
+    --color-secondary-dark: #0088cc;   /* Bleu secondaire foncé */
+    
+    --color-accent: #ff6b00;           /* Orange accent */
+    --color-accent-light: #ff9d4d;     /* Orange accent clair */
+    --color-accent-dark: #cc5500;      /* Orange accent foncé */
+    
+    --color-success: #28a745;          /* Vert succès */
+    --color-warning: #ffc107;          /* Jaune avertissement */
+    --color-error: #dc3545;            /* Rouge erreur */
+    --color-info: #17a2b8;             /* Bleu ciel information */
+    
+    /* Couleurs de fond et surfaces */
+    --color-background: #f8f9fa;       /* Gris très clair pour le fond */
+    --color-surface: #ffffff;          /* Blanc pour les cartes et conteneurs */
+    --color-surface-variant: #f0f4f8;  /* Gris clair pour les éléments alternés */
+    
+    /* Couleurs de texte */
+    --color-text-primary: #212529;     /* Gris très foncé pour le texte principal */
+    --color-text-secondary: #6c757d;   /* Gris moyen pour texte secondaire */
+    --color-text-tertiary: #adb5bd;    /* Gris clair pour texte tertiaire */
+    --color-text-disabled: #dee2e6;    /* Gris très clair pour texte désactivé */
+    
+    /* Bordures et séparateurs */
+    --color-divider: #dee2e6;          /* Gris clair pour les séparateurs */
+    --color-border: #ced4da;           /* Gris moyen pour les bordures */
+    
+    /* Couleurs spécifiques aux mathématiques */
+    --color-math-highlight: rgba(0, 102, 204, 0.1);  /* Bleu transparent pour surligner formules */
+    --color-parameter-t: #e63946;                    /* Rouge pour le paramètre t */
+    --color-coordinate-x: #06d6a0;                   /* Vert pour la coordonnée x */
+    --color-coordinate-y: #118ab2;                   /* Bleu pour la coordonnée y */
+    --color-coordinate-z: #7209b7;                   /* Violet pour la coordonnée z */
+    
+    /* Ombres adaptées au thème clair */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.05), 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.05), 0 8px 10px rgba(0, 0, 0, 0.05);
+    
+    /* Variables spécifiques aux composants dans le thème clair */
+    --header-bg: var(--color-surface);
+    --sidebar-bg: var(--color-surface);
+    --card-bg: var(--color-surface);
+    --tooltip-bg: var(--color-text-primary);
+    --tooltip-color: var(--color-surface);
+    --modal-backdrop: rgba(0, 0, 0, 0.5);
+    --scrollbar-track: var(--color-surface-variant);
+    --scrollbar-thumb: var(--color-divider);
+    --scrollbar-thumb-hover: var(--color-border);
+    
+    /* Graphiques et visualisations */
+    --grid-line-color: rgba(0, 0, 0, 0.1);
+    --grid-line-major: rgba(0, 0, 0, 0.2);
+    --axis-color: rgba(0, 0, 0, 0.7);
+    --graph-bg: #ffffff;
+}
+
+/* Styles spécifiques au thème clair */
+
+/* Style des scrollbars pour le thème clair */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}
+
+/* Surbrillance de sélection */
+::selection {
+    background-color: var(--color-primary-light);
+    color: white;
+}
+
+/* Style pour le code dans le thème clair */
+code {
+    background-color: var(--color-surface-variant);
+    color: var(--color-primary-dark);
+}
+
+/* Style pour les bloc-notes et notes dans le thème clair */
+.note {
+    background-color: var(--color-surface-variant);
+    border-left: 4px solid var(--color-primary);
+}
+
+.note-info {
+    border-left-color: var(--color-info);
+}
+
+.note-warning {
+    border-left-color: var(--color-warning);
+}
+
+.note-error {
+    border-left-color: var(--color-error);
+}
+
+/* Focus styles pour accessibilité */
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Styles de cartes mathématiques */
+.math-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+}
+
+/* Fond des formules mathématiques */
+.formula-container {
+    background-color: var(--color-surface-variant);
+}
+
+/* Style pour les visualisations interactives */
+.visualization-container {
+    background-color: var(--graph-bg);
+    border: 1px solid var(--color-border);
+}
+
+/* Style pour les boutons dans ce thème */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--color-surface-variant);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-divider);
+}
+
+/* Style pour les sliders et contrôles */
+input[type="range"] {
+    background-color: var(--color-surface-variant);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    background-color: var(--color-primary);
+}
+
+/* Style pour les onglets */
+.tabs-container .tab {
+    background-color: var(--color-surface-variant);
+}
+
+.tabs-container .tab.active {
+    background-color: var(--color-surface);
+    border-top: 3px solid var(--color-primary);
+}
